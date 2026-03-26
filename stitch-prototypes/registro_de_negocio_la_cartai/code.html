@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>La CartAI - Únete al Ethos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#dfe9fa",
+              "on-secondary-fixed": "#2f1500",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fdbf8f",
+              "surface-variant": "#d9e3f4",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#006096",
+              "on-primary-fixed-variant": "#6e3900",
+              "inverse-surface": "#27313e",
+              "on-tertiary-fixed-variant": "#004a75",
+              "secondary-fixed-dim": "#f7ba8a",
+              "surface-bright": "#f8f9ff",
+              "on-tertiary-fixed": "#001d32",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#673d17",
+              "error": "#ba1a1a",
+              "primary": "#8d4b00",
+              "outline-variant": "#dbc2b0",
+              "primary-container": "#b15f00",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#554336",
+              "tertiary-fixed-dim": "#96ccff",
+              "surface": "#f8f9ff",
+              "tertiary-container": "#007abd",
+              "surface-container-highest": "#d9e3f4",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#eef4ff",
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#ffb77d",
+              "secondary-fixed": "#ffdcc3",
+              "on-secondary-container": "#784c25",
+              "inverse-primary": "#ffb77d",
+              "on-primary-fixed": "#2f1500",
+              "surface-tint": "#904d00",
+              "primary-fixed": "#ffdcc3",
+              "on-background": "#121c28",
+              "secondary": "#82542c",
+              "on-primary-container": "#fffbff",
+              "surface-dim": "#d1dbec",
+              "surface-container": "#e5eeff",
+              "on-surface": "#121c28",
+              "on-tertiary-container": "#fdfcff",
+              "background": "#f8f9ff",
+              "tertiary-fixed": "#cee5ff",
+              "outline": "#887364",
+              "inverse-on-surface": "#eaf1ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .auth-gradient {
+            background: linear-gradient(135deg, #f8f9ff 0%, #eef4ff 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<!-- Auth Shell Suppression: No TopAppBar/BottomNavBar as per UX mandate for Transactional pages -->
+<main class="flex-grow flex items-center justify-center p-6 md:p-12 auth-gradient relative overflow-hidden">
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="object-cover w-full h-full" data-alt="Elegant boutique hotel interior with soft warm lighting, marble floors, and golden architectural details in a minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCwAYsILCBummlqAoCrenRWpGa1kyD1sX43bbwkZ1s7uLYCPVwbxBwhDyjNZ6haSiFAzz8X8QWsiwUNUnhMqTWpJW4PLPoocvmbfCj2lZrg4RoHI8ffqaWUS6tVgiiWlyEmyhOguxcWa3Ls1tioDSac698SlNKqe8ULTBSX44kI53BDKUmGbOhdBP2cB4qm77Mu5ZWFtBMTve3AfEf3Nru-JH0Bam__lJXSdUrU2PWDllvbLiuczujf6GIH4UOQe-FOOSXb_d1ZIND"/>
+</div>
+<div class="relative w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Left Side: Brand Context -->
+<div class="hidden lg:block space-y-8 pr-12">
+<div class="space-y-2">
+<span class="text-primary font-headline font-bold tracking-widest text-sm uppercase">HOSTELERÍA ESTABLECIDA</span>
+<h1 class="text-6xl font-headline font-extrabold text-on-surface leading-[1.1] tracking-tighter">La CartAI <br/><span class="text-primary-container">Digital</span> para Tu Visión.</h1>
+</div>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">Únete a una red de líderes de la hostelería. Proporcionamos la infraestructura invisible que hace que tu servicio sea inolvidable.</p>
+<div class="grid grid-cols-2 gap-6 pt-4">
+<div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">hotel_class</span>
+<h3 class="font-headline font-bold text-on-surface">Flota Premium</h3>
+<p class="text-sm text-on-surface-variant">Gestiona activos de lujo con precisión.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">concierge</span>
+<h3 class="font-headline font-bold text-on-surface">Servicio Invisible</h3>
+<p class="text-sm text-on-surface-variant">Automatiza las necesidades de los huéspedes sin esfuerzo.</p>
+</div>
+</div>
+</div>
+<!-- Right Side: Sign Up Form -->
+<div class="w-full flex justify-center lg:justify-end">
+<div class="glass-panel w-full max-w-md p-8 md:p-10 rounded-xl shadow-[20px_40px_40px_rgba(18,28,40,0.04)] border border-white/20">
+<div class="mb-10 lg:hidden text-center">
+<h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-tighter">La CartAI</h2>
+</div>
+<div class="space-y-2 mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface">Registra Tu Negocio</h2>
+<p class="text-on-surface-variant text-sm">Comienza tu viaje hacia experiencias de cliente fluidas.</p>
+</div>
+<form class="space-y-5">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-on-surface-variant tracking-wider uppercase ml-1" for="business_name">NOMBRE DEL NEGOCIO</label>
+<input class="w-full px-5 py-3.5 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400" id="business_name" placeholder="ej. Grand Continental Hotel" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-on-surface-variant tracking-wider uppercase ml-1" for="responsible_person">NOMBRE DEL RESPONSABLE</label>
+<input class="w-full px-5 py-3.5 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400" id="responsible_person" placeholder="Nombre Completo" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-on-surface-variant tracking-wider uppercase ml-1" for="email">CORREO CORPORATIVO</label>
+<input class="w-full px-5 py-3.5 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400" id="email" placeholder="name@business.com" type="email"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-on-surface-variant tracking-wider uppercase ml-1" for="password">CONTRASEÑA</label>
+<input class="w-full px-5 py-3.5 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400" id="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-on-surface-variant tracking-wider uppercase ml-1" for="confirm_password">CONFIRMAR</label>
+<input class="w-full px-5 py-3.5 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400" id="confirm_password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full py-4 bg-gradient-to-b from-primary to-primary-container text-white font-headline font-bold rounded-lg shadow-lg hover:shadow-primary/20 transition-all transform active:scale-[0.98]" type="submit">Registrarse</button>
+</div>
+<div class="pt-6 text-center">
+<p class="text-sm text-on-surface-variant">¿Ya tienes una cuenta? <a class="text-primary font-bold hover:underline ml-1" href="#">Iniciar sesión</a></p>
+</div>
+</form>
+<div class="mt-8 pt-8 border-t border-on-surface-variant/10 text-center">
+<p class="text-[10px] text-on-surface-variant/60 leading-relaxed uppercase tracking-widest">AL UNIRTE, ACEPTAS NUESTROS <br/> TÉRMINOS DE SERVICIO Y POLÍTICA DE PRIVACIDAD.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="bg-[#F8F9FF] dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center w-full px-12 py-8 mt-auto border-t border-slate-200/15 dark:border-slate-800/15">
+<div class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm tracking-normal">© 2024 La CartAI. Todos los derechos reservados.</div>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 font-['Inter'] text-sm transition-all opacity-80 hover:opacity-100" href="#">© 2024 La CartAI. Todos los derechos reservados.</a>
+<a class="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 font-['Inter'] text-sm transition-all opacity-80 hover:opacity-100" href="#">Términos de Servicio</a>
+<a class="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 font-['Inter'] text-sm transition-all opacity-80 hover:opacity-100" href="#">Ajustes de Cookies</a>
+<a class="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 font-['Inter'] text-sm transition-all opacity-80 hover:opacity-100" href="#">Soporte Global</a>
+</div>
+</footer>
+</body></html>

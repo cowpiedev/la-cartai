@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#673d17",
+              "primary": "#8d4b00",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#554336",
+              "on-error": "#ffffff",
+              "primary-container": "#b15f00",
+              "outline-variant": "#dbc2b0",
+              "surface-bright": "#f8f9ff",
+              "on-tertiary-fixed": "#001d32",
+              "on-tertiary-fixed-variant": "#004a75",
+              "secondary-fixed-dim": "#f7ba8a",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#6e3900",
+              "surface-variant": "#d9e3f4",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#006096",
+              "inverse-surface": "#27313e",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fdbf8f",
+              "surface-container-high": "#dfe9fa",
+              "on-secondary-fixed": "#2f1500",
+              "tertiary-fixed": "#cee5ff",
+              "background": "#f8f9ff",
+              "outline": "#887364",
+              "inverse-on-surface": "#eaf1ff",
+              "secondary": "#82542c",
+              "surface-tint": "#904d00",
+              "primary-fixed": "#ffdcc3",
+              "on-background": "#121c28",
+              "surface-dim": "#d1dbec",
+              "surface-container": "#e5eeff",
+              "on-tertiary-container": "#fdfcff",
+              "on-surface": "#121c28",
+              "on-primary-container": "#fffbff",
+              "secondary-fixed": "#ffdcc3",
+              "primary-fixed-dim": "#ffb77d",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#2f1500",
+              "on-secondary-container": "#784c25",
+              "inverse-primary": "#ffb77d",
+              "surface": "#f8f9ff",
+              "tertiary-fixed-dim": "#96ccff",
+              "surface-container-highest": "#d9e3f4",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#eef4ff",
+              "tertiary-container": "#007abd"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- Mobile Top Bar (Focused Journey) -->
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h1 class="font-headline text-xl font-extrabold tracking-tight text-primary">Nuevo Plato</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant font-bold">
+            LC
+        </div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pb-32 pt-4 px-6 max-w-md mx-auto">
+<!-- Image Upload Section (Editorial Style) -->
+<section class="mb-10">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low flex flex-col items-center justify-center border-2 border-dashed border-outline-variant/30 group">
+<img alt="Preview de plato" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500" data-alt="close-up of a vibrant healthy salad bowl with avocado and seeds in a professional restaurant setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCGj6RKbMSuWu83uYLXNZxNawC8SI82cODjCaj0tZqq3BpkyIPJkEkpuBhZpIrzYIoQ8BFThaSHZki0opRmNBlzWdl52C7c7D5vZ_T6Cmv-XjXLGrQNzu6s4UEggmTjz4J4bf8M7OBmb3Eo1N1hqfc9CP9q6_m3A7dGQF9VHU4tY76B3KeNsp5_taHywvrFVqmKMw6UY3giRKGQh0Uy70OmwlBTLx4g3a6JthUxbKLL3w1fcbw4mrq_u2-JW763c4QgUrWnVtqphyf"/>
+<div class="relative z-10 flex flex-col items-center gap-3">
+<div class="w-16 h-16 rounded-full bg-white/90 shadow-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'opsz' 40;">add_a_photo</span>
+</div>
+<span class="font-headline font-bold text-on-surface">Subir foto</span>
+<p class="text-xs text-on-surface-variant px-12 text-center">Captura la esencia de tu plato para el análisis visual de IA</p>
+</div>
+</div>
+</section>
+<!-- Form Fields Section -->
+<div class="space-y-8">
+<!-- Name Input -->
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Nombre del Plato</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-primary-fixed text-on-surface placeholder:text-outline-variant transition-all shadow-sm" placeholder="Ej: Risotto de Setas Silvestres" type="text"/>
+</div>
+<!-- Category Dropdown -->
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Categoría</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-primary-fixed text-on-surface transition-all shadow-sm">
+<option>Principales</option>
+<option>Entrantes</option>
+<option>Postres</option>
+<option>Bebidas</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<!-- Price Input -->
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Precio Sugerido</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-primary-fixed text-on-surface placeholder:text-outline-variant transition-all shadow-sm pl-12" placeholder="0.00" step="0.50" type="number"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-primary">€</span>
+</div>
+<p class="text-[10px] text-tertiary-container font-medium mt-1">Nuestra IA analizará la rentabilidad basada en ingredientes.</p>
+</div>
+<!-- Allergens Selection -->
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Alérgenos</label>
+<div class="grid grid-cols-4 gap-3">
+<!-- Allergen Item -->
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant active:bg-primary-fixed active:text-on-primary-fixed-variant transition-colors border border-transparent">
+<span class="material-symbols-outlined mb-1">eco</span>
+<span class="text-[10px] font-medium">Gluten</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-primary-fixed text-on-primary-fixed-variant border border-primary-container/20">
+<span class="material-symbols-outlined mb-1">water_drop</span>
+<span class="text-[10px] font-medium">Lácteos</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant active:bg-primary-fixed active:text-on-primary-fixed-variant transition-colors border border-transparent">
+<span class="material-symbols-outlined mb-1">set_meal</span>
+<span class="text-[10px] font-medium">Pescado</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant active:bg-primary-fixed active:text-on-primary-fixed-variant transition-colors border border-transparent">
+<span class="material-symbols-outlined mb-1">egg</span>
+<span class="text-[10px] font-medium">Huevo</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant active:bg-primary-fixed active:text-on-primary-fixed-variant transition-colors border border-transparent">
+<span class="material-symbols-outlined mb-1">nutrition</span>
+<span class="text-[10px] font-medium">Frutos</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant active:bg-primary-fixed active:text-on-primary-fixed-variant transition-colors border border-transparent">
+<span class="material-symbols-outlined mb-1">grain</span>
+<span class="text-[10px] font-medium">Soja</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant active:bg-primary-fixed active:text-on-primary-fixed-variant transition-colors border border-transparent">
+<span class="material-symbols-outlined mb-1">egg</span>
+<span class="text-[10px] font-medium">Marisco</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-on-surface-variant active:bg-primary-fixed active:text-on-primary-fixed-variant transition-colors border border-transparent">
+<span class="material-symbols-outlined mb-1">more_horiz</span>
+<span class="text-[10px] font-medium">Otros</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky AI Action Button -->
+<div class="fixed bottom-24 left-0 w-full px-6 z-40">
+<button class="w-full bg-gradient-to-b from-primary to-primary-container text-on-primary py-4 rounded-xl shadow-2xl shadow-primary/20 flex items-center justify-center gap-3 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-headline font-bold">Guardar y analizar con IA</span>
+</button>
+</div>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<!-- Determined active: "Platos" since we are adding a new dish -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-medium font-manrope">Carta</span>
+</a>
+<a class="flex flex-col items-center justify-center text-amber-600 dark:text-amber-500 bg-amber-50 dark:bg-amber-900/30 rounded-xl px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">today</span>
+<span class="text-[10px] font-medium font-manrope">Platos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="text-[10px] font-medium font-manrope">Categorías</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] font-medium font-manrope">Precios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium font-manrope">Config</span>
+</a>
+</nav>
+</body></html>

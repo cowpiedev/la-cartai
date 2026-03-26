@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>La CartAI - Restaurant Manager</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#d9e3f4",
+              "on-background": "#121c28",
+              "secondary-fixed": "#ffdcc3",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#f8f9ff",
+              "primary-container": "#b15f00",
+              "primary": "#8d4b00",
+              "on-secondary-fixed": "#2f1500",
+              "secondary-fixed-dim": "#f7ba8a",
+              "on-surface-variant": "#554336",
+              "surface-container-low": "#eef4ff",
+              "outline": "#887364",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-variant": "#d9e3f4",
+              "on-secondary-fixed-variant": "#673d17",
+              "surface-dim": "#d1dbec",
+              "inverse-primary": "#ffb77d",
+              "surface-container": "#e5eeff",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#ffdcc3",
+              "surface": "#f8f9ff",
+              "outline-variant": "#dbc2b0",
+              "on-surface": "#121c28",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed": "#001d32",
+              "on-tertiary-container": "#fdfcff",
+              "secondary-container": "#fdbf8f",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-tint": "#904d00",
+              "on-primary-fixed-variant": "#6e3900",
+              "background": "#f8f9ff",
+              "secondary": "#82542c",
+              "on-primary": "#ffffff",
+              "tertiary": "#006096",
+              "primary-fixed-dim": "#ffb77d",
+              "inverse-surface": "#27313e",
+              "on-tertiary-fixed-variant": "#004a75",
+              "on-primary-fixed": "#2f1500",
+              "surface-container-high": "#dfe9fa",
+              "tertiary-container": "#007abd",
+              "tertiary-fixed-dim": "#96ccff",
+              "on-primary-container": "#fffbff",
+              "tertiary-fixed": "#cee5ff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#784c25"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f9ff;
+      }
+      h1, h2, h3, .font-headline {
+        font-family: 'Manrope', sans-serif;
+      }
+    </style>
+</head>
+<body class="antialiased text-on-surface">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 border-r-0 bg-slate-50 dark:bg-slate-900 py-6 font-manrope antialiased text-slate-800 dark:text-slate-200">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-amber-700 dark:text-amber-500">La CartAI</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Restaurant Manager</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Carta is active by default as it's the main dashboard context -->
+<a class="bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 font-semibold rounded-lg mx-2 px-4 py-3 flex items-center gap-3 active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Carta</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="today">today</span>
+<span>Platos del día</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span>Categorías</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Inteligencia de precios</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-colors active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<a class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg px-4 py-3 flex items-center gap-3 transition-colors mb-4" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Ayuda</span>
+</a>
+<div class="bg-slate-100 dark:bg-slate-800/50 rounded-2xl p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-300 overflow-hidden">
+<img alt="User Profile" data-alt="close-up portrait of a professional chef in white uniform smiling warmly in a commercial kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD00bUrzaqw4CBJTi5AeLh0VabSghklyZzm89XPboBAFakABZdYkqEoudNAgUbFVUaSomSMagCXXLDUHp1DrKuCzJhrWHEIPp-6Hq8ByXpExjh7t2Q1oA_6LPSqIJvO8MMO00WEEkP1e6FihCXaG9YMHS6Pytox5Ek7G_HBtBSUUIyrBWNjF2Wm69cuO-HrLqsRj7-rSp_McwdOFP4qEI3Y4o3nMGvBFxM8sxsHuI66KMSOq-ra9SxBPae3ZnJ1FN2TXTME34F3rUyJ"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-semibold truncate">Chef Alejandro</p>
+<p class="text-xs text-slate-500 truncate">Admin</p>
+</div>
+<button class="text-slate-400 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 min-h-screen pb-24 md:pb-12">
+<!-- Top App Bar (Mobile-friendly) -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-lg px-6 py-6 flex items-center justify-between">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface font-headline leading-none">Hola, Chef</h2>
+<p class="text-slate-500 mt-1 font-medium">Aquí tienes el resumen de hoy en <span class="text-primary font-bold">La CartAI</span></p>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="md:hidden w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">person</span>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="px-6 space-y-8 max-w-7xl mx-auto">
+<!-- Summary Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Platos Activos Card -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] relative overflow-hidden flex flex-col justify-between group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">restaurant</span>
+</div>
+<span class="text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +5%
+                        </span>
+</div>
+<div class="mt-6">
+<p class="text-slate-500 font-medium text-sm">Platos activos</p>
+<h3 class="text-4xl font-extrabold text-on-surface mt-1">42</h3>
+</div>
+</div>
+<!-- Platos Publicados Card -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] relative overflow-hidden flex flex-col justify-between group border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl">publish</span>
+</div>
+<span class="text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12%
+                        </span>
+</div>
+<div class="mt-6">
+<p class="text-slate-500 font-medium text-sm">Platos publicados hoy</p>
+<h3 class="text-4xl font-extrabold text-on-surface mt-1">12</h3>
+</div>
+</div>
+<!-- Categorías Card -->
+<div class="bg-surface-container-low p-6 rounded-[1.5rem] relative overflow-hidden flex flex-col justify-between group">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-on-surface-variant/10 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl">grid_view</span>
+</div>
+<span class="text-slate-500 bg-white/50 px-2.5 py-1 rounded-full text-xs font-bold">Estable</span>
+</div>
+<div class="mt-6">
+<p class="text-slate-500 font-medium text-sm">Categorías creadas</p>
+<h3 class="text-4xl font-extrabold text-on-surface mt-1">8</h3>
+</div>
+</div>
+</section>
+<!-- Quick Actions Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h4 class="text-xl font-bold font-headline">Acciones rápidas</h4>
+<span class="text-primary text-sm font-semibold cursor-pointer hover:underline">Ver todas</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex-1 min-w-[200px] flex items-center justify-center gap-3 bg-gradient-to-b from-primary to-primary-container text-white py-4 px-6 rounded-xl font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                        Añadir nuevo plato
+                    </button>
+<button class="flex-1 min-w-[200px] flex items-center justify-center gap-3 bg-surface-container-lowest border border-outline-variant/20 text-on-surface py-4 px-6 rounded-xl font-bold hover:bg-white transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">visibility</span>
+                        Ver mi carta pública
+                    </button>
+<button class="flex-1 min-w-[200px] flex items-center justify-center gap-3 bg-surface-container-lowest border border-outline-variant/20 text-on-surface py-4 px-6 rounded-xl font-bold hover:bg-white transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">qr_code_2</span>
+                        Gestionar QR
+                    </button>
+</div>
+</section>
+<!-- Main Feature: Recent Activity / Content Preview -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- AI Insights Panel -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/5">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<h3 class="text-lg font-bold font-headline">Inteligencia de Precios</h3>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-bold">Optimización con IA</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="p-4 bg-tertiary/5 rounded-2xl border-l-4 border-tertiary">
+<p class="text-sm text-on-surface leading-relaxed">
+<span class="font-bold text-tertiary">Sugerencia:</span> Tu plato "Risotto de Setas" tiene un margen de beneficio 15% inferior al mercado local. Considera ajustar el precio a <strong>16.50€</strong>.
+                            </p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">trending_up</span>
+<span class="text-sm font-semibold">Tendencia de Alérgenos</span>
+</div>
+<span class="text-xs font-bold text-primary">Detalles</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">analytics</span>
+<span class="text-sm font-semibold">Popularidad por Franja Horaria</span>
+</div>
+<span class="text-xs font-bold text-primary">Detalles</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Public Preview Card -->
+<div class="relative group h-full min-h-[400px] rounded-[2rem] overflow-hidden flex flex-col justify-end p-8">
+<img alt="Menu Preview" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="top-down artistic view of a gourmet restaurant table with various colorful Mediterranean dishes and natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJUHSa6dcJbywfh2uakz7TZPW8vwNwosfBAHdloGf2aHp88prTvXRoUnHTzYa59foq9qqzgpHvFLtOnGdrsXzPk0n0jjZdKUDhNhT3YOZVhEK3sRxRtlQ_1RQheaB57nNh-IC1Sho2ghUjpx_hOmLr8nHzrwXAjyHWP0ki2_WI62MOBbFFVXBcL6QtJvHwsUMT_JehBZVxXWN8wjKLcQ3TlNooiPbL_YrwhjFm0Y9K1EkBRKSnBAq8rFCfZJnMAlUZSFMtB8iuGTy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-on-background/30 to-transparent"></div>
+<div class="relative z-10 text-white">
+<span class="inline-block px-3 py-1 bg-primary text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Vista Previa de Carta</span>
+<h3 class="text-3xl font-extrabold font-headline mb-2 leading-tight">Experiencia Gourmet en Vivo</h3>
+<p class="text-slate-300 text-sm mb-6 max-w-sm">Tu carta digital está siendo visualizada por 24 clientes en este momento.</p>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+                            Acceso Público
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-amber-600 dark:text-amber-500 bg-amber-50 dark:bg-amber-900/30 rounded-xl px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="text-[10px] font-medium font-manrope">Carta</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="today">today</span>
+<span class="text-[10px] font-medium font-manrope">Platos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="text-[10px] font-medium font-manrope">Categorías</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="text-[10px] font-medium font-manrope">Precios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 tap-highlight-transparent transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-medium font-manrope">Config</span>
+</a>
+</nav>
+<!-- Contextual Floating Action Button (FAB) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-2xl shadow-2xl shadow-primary/40 flex items-center justify-center md:hidden active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

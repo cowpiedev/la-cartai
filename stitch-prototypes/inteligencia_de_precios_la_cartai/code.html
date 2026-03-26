@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "outline": "#887364",
+              "on-secondary-container": "#784c25",
+              "on-surface": "#121c28",
+              "inverse-primary": "#ffb77d",
+              "secondary-fixed": "#ffdcc3",
+              "secondary": "#82542c",
+              "background": "#f8f9ff",
+              "surface-variant": "#d9e3f4",
+              "primary-fixed": "#ffdcc3",
+              "surface-dim": "#d1dbec",
+              "secondary-fixed-dim": "#f7ba8a",
+              "surface-container-low": "#eef4ff",
+              "on-primary-fixed-variant": "#6e3900",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#001d32",
+              "on-tertiary-fixed-variant": "#004a75",
+              "on-primary-container": "#fffbff",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-container": "#e5eeff",
+              "secondary-container": "#fdbf8f",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "primary-container": "#b15f00",
+              "on-primary-fixed": "#2f1500",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#96ccff",
+              "tertiary-fixed": "#cee5ff",
+              "surface-bright": "#f8f9ff",
+              "inverse-surface": "#27313e",
+              "surface-container-high": "#dfe9fa",
+              "primary": "#8d4b00",
+              "surface-container-highest": "#d9e3f4",
+              "on-tertiary-container": "#fdfcff",
+              "on-surface-variant": "#554336",
+              "on-primary": "#ffffff",
+              "tertiary": "#006096",
+              "surface": "#f8f9ff",
+              "on-secondary-fixed-variant": "#673d17",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#2f1500",
+              "primary-fixed-dim": "#ffb77d",
+              "outline-variant": "#dbc2b0",
+              "tertiary-container": "#007abd",
+              "on-background": "#121c28",
+              "surface-tint": "#904d00"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- SideNavBar (from JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-900 flex flex-col p-4 border-r border-slate-200 dark:border-slate-800 font-manrope antialiased tracking-tight">
+<div class="mb-8 px-4">
+<h1 class="text-2xl font-bold text-amber-900 dark:text-amber-100">Hearth &amp; Slate</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Price Intelligence AI</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Market Overview</span>
+</a>
+<!-- ACTIVE TAB: Price Intelligence -->
+<a class="flex items-center gap-3 px-4 py-3 bg-amber-50 dark:bg-amber-900/20 text-amber-800 dark:text-amber-200 rounded-lg font-semibold transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Price Intelligence</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span>Competitor Map</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+<span>Menu Engineering</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 space-y-1">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold mb-4 shadow-md hover:opacity-90 transition-opacity">
+                New Analysis
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar (from JSON) -->
+<header class="w-full h-16 sticky top-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 flex items-center justify-between px-8 font-manrope text-sm shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary-fixed" placeholder="Search plates or competitors..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-amber-600 transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-amber-600 transition-colors" data-icon="history">history</span>
+</div>
+<div class="h-6 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden lg:block">
+<p class="font-bold text-on-surface">Alex Hearth</p>
+<p class="text-[10px] text-slate-500 uppercase">Manager</p>
+</div>
+<img alt="Manager Avatar" class="w-10 h-10 rounded-full object-cover ring-2 ring-primary/10" data-alt="Professional headshot of a restaurant manager in a minimalist white background, soft editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMMkw1lcK0EZ6CfCuV-N8IqCxKu4blT94WwLNza9Kg7v2q1nNu5c6dXh49uhnDGF33OuZqFKOSCJ4R4SDsSoM5R64OXHhul3cWDpcOGXLHDYxnfvgoB-7cyDcgWMuIjM0m0DI7D-PfVCEjFSbs88cHHeEcWJDeFsowb66HAnUTOBwnRQAf6nVhAuuf0VLX6p70UOkHg3IX8OO1FQUkPquer983F1egjJYM4vOMkeB5CJmIn6j2pwWIo5PpASZ6_W_0pg-3FnXc2UGp"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="p-10 max-w-7xl mx-auto space-y-10">
+<!-- Hero Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-transparent pb-4">
+<div class="space-y-2">
+<nav class="flex items-center gap-2 text-xs font-semibold text-tertiary uppercase tracking-widest">
+<span>Menu</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span>Platos Principales</span>
+</nav>
+<h2 class="text-5xl font-extrabold font-headline tracking-tighter text-on-surface">Hamburguesa Wagyu Deluxe</h2>
+<div class="flex items-center gap-4 pt-2">
+<span class="text-3xl font-light text-primary">22.50€</span>
+<div class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-xs font-bold uppercase tracking-tighter">
+                            En la media / Competitivo
+                        </div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 rounded-xl border border-outline-variant/30 font-bold text-on-surface hover:bg-surface-container-low transition-all active:scale-95">
+                        Publicar con precio actual
+                    </button>
+<button class="px-6 py-3 rounded-xl bg-gradient-to-b from-primary to-primary-container text-on-primary font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95">
+                        Ajustar a 23.00€
+                    </button>
+</div>
+</div>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Competitor List -->
+<div class="lg:col-span-7 space-y-6">
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="groups">groups</span>
+                                Competidores Cercanos
+                            </h3>
+<span class="text-xs font-medium text-slate-400">Actualizado hace 24m</span>
+</div>
+<div class="space-y-4">
+<!-- Competitor Row 1 -->
+<div class="flex items-center justify-between p-5 rounded-2xl bg-surface-container-low/50 hover:bg-surface-container hover:shadow-md transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">The Grill House</p>
+<p class="text-sm text-slate-500 italic">Hamburguesa Wagyu</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-on-surface">24.00€</p>
+<p class="text-[10px] font-bold text-error uppercase">+6.6% vs tú</p>
+</div>
+</div>
+<!-- Competitor Row 2 -->
+<div class="flex items-center justify-between p-5 rounded-2xl bg-surface-container-low/50 hover:bg-surface-container hover:shadow-md transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Gourmet Burger Bar</p>
+<p class="text-sm text-slate-500 italic">Wagyu Special</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-on-surface">21.00€</p>
+<p class="text-[10px] font-bold text-tertiary uppercase">-6.7% vs tú</p>
+</div>
+</div>
+<!-- Competitor Row 3 -->
+<div class="flex items-center justify-between p-5 rounded-2xl bg-surface-container-low/50 hover:bg-surface-container hover:shadow-md transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="hotel_class">hotel_class</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Luxe Dining</p>
+<p class="text-sm text-slate-500 italic">Premium Wagyu Burger</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-on-surface">26.50€</p>
+<p class="text-[10px] font-bold text-error uppercase">+17.7% vs tú</p>
+</div>
+</div>
+</div>
+</div>
+<p class="text-center text-xs text-slate-400 italic">
+<span class="material-symbols-outlined text-[14px] align-middle mr-1" data-icon="info">info</span>
+                        Los datos de competidores son públicos y anónimos.
+                    </p>
+</div>
+<!-- Right Column: AI Analysis & Visual Indicators -->
+<div class="lg:col-span-5 space-y-8">
+<!-- AI Recommendation Card -->
+<div class="relative overflow-hidden bg-primary p-8 rounded-3xl text-on-primary shadow-2xl">
+<!-- Decorative glow -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -left-10 -bottom-10 w-32 h-32 bg-primary-container/30 rounded-full blur-2xl"></div>
+<div class="relative z-10 space-y-6">
+<div class="flex items-center gap-3">
+<div class="bg-white/20 p-2 rounded-lg backdrop-blur-md">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="text-xl font-bold">Recomendación de la IA</h3>
+</div>
+<p class="text-lg leading-relaxed opacity-90 font-medium">
+                                "Tu precio está alineado con el mercado premium local. Sugerimos un rango entre <span class="underline decoration-secondary-fixed decoration-2 underline-offset-4 font-bold">21.50€ y 23.50€</span> para maximizar margen sin perder competitividad."
+                            </p>
+<div class="pt-4 flex items-center gap-4">
+<div class="flex-1 h-2 bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-3/4"></div>
+</div>
+<span class="text-xs font-bold uppercase">Confianza: Alta</span>
+</div>
+</div>
+</div>
+<!-- Visual Positioning Gauge -->
+<div class="bg-surface-container-highest/30 backdrop-blur-sm rounded-3xl p-8 border border-white/50">
+<h4 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6 text-center">Distribución de Precios Mercado</h4>
+<div class="relative h-24 flex items-end justify-between px-4">
+<!-- Gauge Bars -->
+<div class="w-8 bg-slate-200 h-1/3 rounded-t-md"></div>
+<div class="w-8 bg-slate-200 h-1/2 rounded-t-md"></div>
+<div class="w-8 bg-tertiary-container h-2/3 rounded-t-md opacity-40"></div>
+<div class="w-8 bg-primary h-full rounded-t-md relative">
+<!-- Marker for current price -->
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+<span class="text-[10px] font-extrabold text-primary whitespace-nowrap">TU PRECIO</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+<div class="w-8 bg-slate-200 h-3/4 rounded-t-md"></div>
+<div class="w-8 bg-slate-200 h-1/2 rounded-t-md"></div>
+<div class="w-8 bg-slate-200 h-1/4 rounded-t-md"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2">
+<span>Económico</span>
+<span>Premium</span>
+</div>
+</div>
+<!-- Market Insights Mini Cards -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-50">
+<p class="text-xs text-slate-500 mb-1">Precio Medio</p>
+<p class="text-xl font-bold text-on-surface">23.83€</p>
+</div>
+<div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-50">
+<p class="text-xs text-slate-500 mb-1">Volumen Búsqueda</p>
+<p class="text-xl font-bold text-tertiary">+12%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Promotion / Feature Card -->
+<section class="mt-12">
+<div class="rounded-3xl overflow-hidden h-[300px] relative group cursor-pointer shadow-xl">
+<img alt="Gourmet Wagyu Burger close up" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Hyper-realistic close-up of a wagyu burger with melting cheese, caramelized onions, and gourmet brioche bun on a dark wooden table, dramatic warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXIz6pdQMTYPFFYFiZgp7fGD9lOGwRhvnNXKLUkVnbwhrMvbhiOUWcRH1rP4CU2RQNhQJh0DYVoizHimMI92H6xRVvtTlVNrG8x3eDUxozPNsRMYjRJN9o8ieUFxf5SOZEwAZNUcsQIrvklVMWBN4m60B4Ok_gkCCfrZx2mbVyxT34RnWW_vFDU9v24Y7jGsNSLR1I7T6oliUBvyYa98Yx8Z04PgQoN-xJZR6W0t7XYcOmeBrUj3y8nRSAjTsT8MkRAlxlkaDR_nmt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+<div class="max-w-md">
+<h3 class="text-3xl font-bold text-white mb-2">Análisis de Estacionalidad</h3>
+<p class="text-white/70 text-sm">El próximo fin de semana se celebra el festival local. La demanda de productos premium subirá un 25%. Considera un ajuste temporal.</p>
+</div>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-on-surface transition-colors">
+                            Ver Predicción
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

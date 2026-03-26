@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumière Dining - Digital Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#ffb77d",
+              "tertiary-fixed": "#cee5ff",
+              "surface-container-highest": "#d9e3f4",
+              "surface-tint": "#904d00",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#ffdcc3",
+              "surface-container-high": "#dfe9fa",
+              "surface": "#f8f9ff",
+              "inverse-primary": "#ffb77d",
+              "on-primary-fixed-variant": "#6e3900",
+              "on-primary-fixed": "#2f1500",
+              "surface-container-low": "#eef4ff",
+              "primary-fixed": "#ffdcc3",
+              "surface-variant": "#d9e3f4",
+              "on-error": "#ffffff",
+              "secondary": "#82542c",
+              "on-secondary-fixed": "#2f1500",
+              "background": "#f8f9ff",
+              "secondary-fixed-dim": "#f7ba8a",
+              "primary-container": "#b15f00",
+              "on-surface": "#121c28",
+              "outline-variant": "#dbc2b0",
+              "on-background": "#121c28",
+              "surface-dim": "#d1dbec",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#007abd",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#784c25",
+              "on-tertiary-container": "#fdfcff",
+              "error-container": "#ffdad6",
+              "error": "#ba1a1a",
+              "secondary-container": "#fdbf8f",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#006096",
+              "surface-bright": "#f8f9ff",
+              "primary": "#8d4b00",
+              "tertiary-fixed-dim": "#96ccff",
+              "outline": "#887364",
+              "on-primary-container": "#fffbff",
+              "inverse-on-surface": "#eaf1ff",
+              "on-surface-variant": "#554336",
+              "on-secondary-fixed-variant": "#673d17",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#004a75",
+              "inverse-surface": "#27313e",
+              "surface-container": "#e5eeff",
+              "on-tertiary-fixed": "#001d32"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body antialiased pb-32">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl docked full-width top-0 sticky z-50 bg-slate-100 dark:bg-slate-900 shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-700 dark:text-amber-500" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="text-amber-800 dark:text-amber-600 font-extrabold tracking-tighter text-xl font-headline">La CartAI</span>
+</div>
+<h1 class="font-manrope font-bold tracking-tight text-xl text-amber-700 dark:text-amber-500">Lumière Dining</h1>
+<div class="w-8"></div> <!-- Spacer for balance -->
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 pt-6 space-y-8">
+<!-- Featured Section: Platos del Día -->
+<section>
+<div class="flex items-baseline justify-between mb-4">
+<h2 class="font-headline text-2xl font-extrabold text-on-surface">Platos del Día</h2>
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Sugerencias</span>
+</div>
+<div class="flex overflow-x-auto gap-4 hide-scrollbar -mx-4 px-4 snap-x">
+<!-- Featured Item 1 -->
+<div class="min-w-[85%] snap-center relative rounded-3xl overflow-hidden aspect-[4/5] shadow-xl group">
+<img alt="Solomillo de buey" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Gourmet beef tenderloin steak with rosemary garnish and a rich red wine reduction on a dark ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJrVntUQg3eQNwlOaHfaqy5NiU3UZAQhC-xCBC_FhL4cqlKKVqRAlMaJXDszDHXiuWiybR4TTZ0j75P_wUcVySYqpRzACkScUJGrYR3tg9oPFyHV6dvKTAgloFPPQGYcs_uxRTm-ptybAxOx5o7juLMhiEOCrSoaXyK7_0NIJpptAter1uc7jMfvkj3qk858tTqQpEz_3OySkYpUoTBMqqlTn12hD6Q5Ou6S4dBcL1PMBPdSwbodzBMue32WpVX8CR_aB6ZmAqRzgq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-6 text-white">
+<span class="bg-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2 inline-block">Recomendado</span>
+<h3 class="text-2xl font-headline font-bold mb-1">Solomillo de Buey</h3>
+<p class="text-white/80 text-sm mb-3">Con reducción de vino tinto y parmentier de trufa negra.</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold">28,50 €</span>
+<button class="bg-white/20 backdrop-blur-md p-2 rounded-full border border-white/30">
+<span class="material-symbols-outlined align-middle" data-icon="info">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured Item 2 -->
+<div class="min-w-[85%] snap-center relative rounded-3xl overflow-hidden aspect-[4/5] shadow-xl group">
+<img alt="Salmón glaseado" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Pan-seared salmon fillet with honey glaze served with vibrant green asparagus and lemon wedges on a white marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvtmuIPQ1s4vimLqYiQIdjmFP2UuwVU3by2ubmfaIZP2coKdIiq7873tQjkLu8Ul92LLbwUpwGVknNQDA_dzedNsB9fVvTWUpe8BlSR_QcbdNcAHC8T82Bk5zzn-V8vxTqfhixb_LqWHsJffQpCXWWnnRdx8NT8h0UhP5ahc6uqP6bkWpLuB1ucmEv1dBunpAVjGogbpjVvHS5dhdc4TwbHqzAfphfbPnGkpyoF9muDUbrxw2kGucujhLfk6KgOre-2pAuC5XMtRGj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 p-6 text-white">
+<span class="bg-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2 inline-block">Temporada</span>
+<h3 class="text-2xl font-headline font-bold mb-1">Salmón Glaseado</h3>
+<p class="text-white/80 text-sm mb-3">Miel de azahar, espárragos trigueros y perlas de cítricos.</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold">22,00 €</span>
+<button class="bg-white/20 backdrop-blur-md p-2 rounded-full border border-white/30">
+<span class="material-symbols-outlined align-middle" data-icon="info">info</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Horizontal Categories -->
+<nav class="sticky top-[68px] z-40 -mx-4 px-4 py-2 bg-background/95 backdrop-blur-md">
+<div class="flex overflow-x-auto gap-2 hide-scrollbar py-1">
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-primary text-on-primary font-bold text-sm shadow-lg shadow-primary/20 transition-all active:scale-95">Menu</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-semibold text-sm hover:bg-surface-container transition-all active:scale-95">Entrantes</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-semibold text-sm hover:bg-surface-container transition-all active:scale-95">Carnes</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-semibold text-sm hover:bg-surface-container transition-all active:scale-95">Pescados</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-semibold text-sm hover:bg-surface-container transition-all active:scale-95">Postres</button>
+</div>
+</nav>
+<!-- Main Listing -->
+<section class="space-y-6">
+<h3 class="font-headline text-lg font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+                Nuestra Selección
+            </h3>
+<!-- Menu Cards -->
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 flex gap-4 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Burrata de búfala" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Creamy buffalo burrata cheese on a bed of fresh heirloom tomatoes and pesto with balsamic drizzle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZo2r95kwfQOGlNMndgtV7mdLIHOmVqIauxz9IEsvuLkCFVJL0smOP5mdQERT_BHDoAZvoPKUyrWIosQnI0twyzzXPzXXP6ZXXm2RqRSIopvFs7kSdKrON9q3ya650iWfgWc_ovgqCHxTc5409uvEeX-xhE-OxEXx7fZnjXBqasGfQe5iNw6TB1t0eP7-B62UYM2IcUSqkqMCCcEVkS5F1L_j706Yy-j8NHbbAV355mHkmThMmc5F60Lbg7vn0Az4kjYGU1U10RRv8"/>
+</div>
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-on-surface">Burrata de Búfala</h4>
+<span class="material-symbols-outlined text-outline text-lg" data-icon="info">info</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1">Con tomates reliquia, pesto de albahaca fresca y piñones tostados.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="text-primary font-bold">14,50 €</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] px-2 py-0.5 rounded-full font-bold">Populares</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 flex gap-4 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Tacos de Atún" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Gourmet tuna tartare tacos in a crispy shell with avocado crema and microgreens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXBnX5KMIY3TI-YpkfxVvSsol3voBZEFnpEtBP_iQcV_CIKhyJ088v3q3uDslTW5RjpS0i1yLfl9fWOBG6zzM2MwvkKN1sKaMKyQyNZ1t7DNAvggiZAXYrLqqu_Gqb3cbrIXtwgh_dHFAVjTr4UMK98I11RQ2RP2zvyykejlyM1KsjizTKchK0_eGD5H_BEF4x-nPwDqHr7GMle1vBmjC6enrP0y0aIygf8e_ua31Ca1eqbGkFkqpIfcl930CR5ZWL7O2D2Qnxglcr"/>
+</div>
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-on-surface">Tártar de Atún Rojo</h4>
+<span class="material-symbols-outlined text-outline text-lg" data-icon="info">info</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1">Marinado en soja cítrica con emulsión de aguacate y mango.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="text-primary font-bold">18,90 €</span>
+<span class="material-symbols-outlined text-amber-500 text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 flex gap-4 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Tarta de Queso" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Creamy homemade cheesecake with a golden crust and fresh raspberry coulis decoration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK-38gRcaaxvcN25n8R_5ya5il5-jUmG_lx9K9mCV2-ScI1fqxgXSZ2NegnkJmdP9yDd01IV7UWpmzeiihF_nmiVtBq7HXYJc_NrbMOEa5G9aBlSrBvvp8_c2HuKGZNAIyIdjBCbuc0ZX6WMI1XkzV_ttCaxXK_gVAcjk_8EIjfwP_DUBgKat2U0snhtbpP_1U61pARrPwS3QP_z7cpWqClBgEOZ5PfCrvMAuLo1zqF1zFuazdL8rgHH4EEkYfs0_PSM_9NMoGlwBj"/>
+</div>
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-on-surface">Tarta de Queso Fluida</h4>
+<span class="material-symbols-outlined text-outline text-lg" data-icon="info">info</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1">Receta artesanal con mezcla de quesos y coulis de frutos rojos.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="text-primary font-bold">8,50 €</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 flex gap-4 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Arroz con Bogavante" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Traditional Spanish lobster paella served in a typical pan with rich saffron rice and fresh seafood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6UqYkRjLtU86SyYz2tT9EOK-cpRioOrA7h05iAEvxF9ho-fEbLbpf_vRoWXx8emaE3WP9pcQ0fDnOAwz6qCoxWjIjhQyea9KiuSem7L-yRFAWlhGo0gGUagNNLvlY9_plxIB55xxCrpUgrW8oP6msiYVp_hdjoMcAHFjIcvySCweDZgGJlUV91t8ONUti2dDcpbGSmmrIT_jSiCLXQdiH8xF8Gx39SBaVIqMKMl5z8NjEhB5s7D4CFLYTFo-5gAGc9MrzClIlSOrX"/>
+</div>
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-on-surface">Arroz con Bogavante</h4>
+<span class="material-symbols-outlined text-outline text-lg" data-icon="info">info</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2 mt-1">Arroz meloso cocinado a fuego lento con bogavante nacional (mín 2 pers).</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="text-primary font-bold">26,00 €</span>
+<span class="text-[10px] text-on-surface-variant italic">p/p</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Info Card -->
+<section class="bg-surface-container rounded-3xl p-6 text-center">
+<h5 class="font-headline font-bold text-on-surface mb-2">¿Tienes alguna alergia?</h5>
+<p class="text-sm text-on-surface-variant mb-4">Pulsa en el icono de información <span class="material-symbols-outlined text-sm align-middle" data-icon="info">info</span> de cada plato para ver los detalles de alérgenos.</p>
+<div class="flex justify-center gap-4 text-outline-variant">
+<span class="material-symbols-outlined" data-icon="egg_alt">egg_alt</span>
+<span class="material-symbols-outlined" data-icon="set_meal">set_meal</span>
+<span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
+<span class="material-symbols-outlined" data-icon="nutrition">nutrition</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-white/90 dark:bg-slate-950/90 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-3xl border-t border-slate-100 dark:border-slate-800 tonal-shift surface-container-low shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center bg-amber-50 dark:bg-amber-900/20 text-amber-800 dark:text-amber-400 rounded-2xl px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all Active: translate-y-[-2px] duration-300">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-widest mt-1">Menu</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all Active: translate-y-[-2px] duration-300">
+<span class="material-symbols-outlined" data-icon="stat_minus_1">stat_minus_1</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-widest mt-1">Favorites</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all Active: translate-y-[-2px] duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-widest mt-1">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all Active: translate-y-[-2px] duration-300">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-widest mt-1">Info</span>
+</div>
+</nav>
+</body></html>

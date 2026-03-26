@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>La CartAI - Mi Carta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#eef4ff",
+                        "on-tertiary-container": "#fdfcff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb77d",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb77d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "surface-container-highest": "#d9e3f4",
+                        "on-surface-variant": "#554336",
+                        "tertiary-fixed": "#cee5ff",
+                        "background": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "secondary": "#82542c",
+                        "on-surface": "#121c28",
+                        "inverse-surface": "#27313e",
+                        "secondary-fixed-dim": "#f7ba8a",
+                        "surface-variant": "#d9e3f4",
+                        "surface": "#f8f9ff",
+                        "surface-tint": "#904d00",
+                        "primary": "#8d4b00",
+                        "outline-variant": "#dbc2b0",
+                        "secondary-container": "#fdbf8f",
+                        "primary-container": "#b15f00",
+                        "primary-fixed": "#ffdcc3",
+                        "on-secondary-container": "#784c25",
+                        "surface-container-high": "#dfe9fa",
+                        "on-secondary-fixed": "#2f1500",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-background": "#121c28",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#673d17",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d1dbec",
+                        "on-primary-fixed": "#2f1500",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "tertiary-container": "#007abd",
+                        "tertiary": "#006096",
+                        "outline": "#887364"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-24">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#F8F9FF] sticky top-0 z-50 px-6 py-4 flex items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<h1 class="text-2xl font-bold tracking-tight text-[#8D4B00]">Mi Carta</h1>
+<span class="text-xs text-on-surface-variant font-medium opacity-70">La CartAI Restaurant</span>
+</div>
+<button class="bg-primary text-on-primary w-12 h-12 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</header>
+<main class="px-6 py-6 space-y-6">
+<!-- Search & Filter Cluster -->
+<section class="space-y-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant opacity-60" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 pl-12 pr-4 text-sm focus:ring-2 focus:ring-primary-fixed transition-all shadow-sm" placeholder="Buscar plato..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-primary-fixed text-on-primary-fixed-variant px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="tune">tune</span>
+                    Todos
+                </button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap">Entrantes</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap">Principales</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap">Postres</button>
+</div>
+</section>
+<!-- Menu Cards Grid -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Card 1: Plato del Día -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm relative group active:scale-[0.98] transition-transform">
+<div class="h-48 relative overflow-hidden">
+<img alt="Plato Gourmet" class="w-full h-full object-cover" data-alt="Close-up of a juicy ribeye steak with rosemary garnish on a dark ceramic plate with dramatic warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRWWaC_pQqHVR0G5-_ATVc4aAF40dTGr9iSUaOka__PLXIFMetH_ldlsuJ8bJqpexdycbb5-FNK5dNEEFC3GVWmO2gUeq851-QNH3udkCy4sbp2pSFUtdsCI1ATzN75a8TKEQ6vRZRXowMJObInrxY1O-XE45NWyhlW7BML7LDwObW9AYOQ09JKzkO09q6HRvvqP6PK3uR4KDhYLLY_m7Px8ho5RPN6EHArihlxSR-PYNixwwRPB1HjscMklDF6zzrk5slfz7DHnv9"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 backdrop-blur-md text-on-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">Plato del día</span>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="p-5 flex justify-between items-start">
+<div class="space-y-1">
+<h3 class="text-lg font-bold text-on-surface">Entrecot a la Brasa</h3>
+<p class="text-sm text-on-surface-variant line-clamp-1">300g de ternera gallega con sal Maldon</p>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-primary font-bold text-lg">24,50€</span>
+<span class="flex items-center gap-1 text-[10px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                ACTIVO
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Fuera de Carta -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm relative group active:scale-[0.98] transition-transform">
+<div class="h-48 relative overflow-hidden grayscale-[0.3]">
+<img alt="Risotto" class="w-full h-full object-cover" data-alt="Exotic saffron risotto with wild mushrooms and truffle oil in a rustic bowl on a dark wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlssVx3NM-VHVYXyCIgjt5pqUTFpVMEFAXnZAiRnkW8-hX7uG6W-xnJeR4l-qYsYBLIDPZ8rgDC5o_ODVOLLOBLNhVnVUZ1hC4UU8h0aZKucEH_P10u5khR2nor6MUvx_dnhXOukguf-SkeIR2v6xj3JAn_THZz18raoBf2sdd60t9t2EWHYoYE5aFOfNmp6bMi7n6jbRTJVnwwiDowjN0v9a9_3yH1BBjUq-U02P5HqsEakAvwKCZhzYtrcXy7s_Ai2n-mZKc2Ah0"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary/90 backdrop-blur-md text-on-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">Fuera de carta</span>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+<div class="absolute inset-0 bg-on-surface/5 backdrop-grayscale-[0.2]"></div>
+</div>
+<div class="p-5 flex justify-between items-start opacity-70">
+<div class="space-y-1">
+<h3 class="text-lg font-bold text-on-surface">Risotto de Trufa</h3>
+<p class="text-sm text-on-surface-variant line-clamp-1">Arroz carnaroli con trufa negra fresca</p>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-on-surface-variant font-bold text-lg">18,00€</span>
+<span class="flex items-center gap-1 text-[10px] text-on-surface-variant font-bold bg-surface-container-high px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[12px]" data-icon="block">block</span>
+                                PAUSADO
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Standard -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm relative group active:scale-[0.98] transition-transform">
+<div class="h-48 relative overflow-hidden">
+<img alt="Pizza Artesana" class="w-full h-full object-cover" data-alt="Neapolitan pizza with fresh basil and mozzarella bubbling from a stone oven with warm ambient kitchen glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAotMrlNJ9jR9CMIvPp_WLQ-hh2pPbAKecmZQzTW_-OmpFu_82JedX0bBUyhOu7ipz0j2omNSfXzUQklJ4TOdM9bGAPUtV-PGdUTiGoHJH62QorehK5rFO-6Qx2MCaw3ZEV4ZBxsA9_k5dSJsAbKD3GOaM7Wkg1SehKwevuMDfyEVHH7PfZcgEgANOemgUohW1ANMNzkdMwbvyaMjbXiH-_Rvfbww4F7ohRd8osNzaFQkG06WMgw_hUbYAK95-wCHMuA5ia7wZYz1J7"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="p-5 flex justify-between items-start">
+<div class="space-y-1">
+<h3 class="text-lg font-bold text-on-surface">Pizza Margarita 2.0</h3>
+<p class="text-sm text-on-surface-variant line-clamp-1">Tomate San Marzano, albahaca y AOVE</p>
+<div class="flex items-center gap-2 pt-1">
+<span class="text-primary font-bold text-lg">14,20€</span>
+<span class="flex items-center gap-1 text-[10px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                ACTIVO
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50 rounded-t-3xl font-manrope text-[10px] uppercase tracking-wider">
+<div class="flex flex-col items-center justify-center text-amber-600 dark:text-amber-500 font-bold bg-amber-50/50 dark:bg-amber-900/20 rounded-xl px-3 py-1 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span>Carta</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="today">today</span>
+<span>Platos</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span>Categorías</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Precios</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 tap-highlight-transparent">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Ajustes</span>
+</div>
+</nav>
+</body></html>

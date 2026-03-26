@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>La CartAI - Configuración de Negocio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-dim": "#d1dbec",
+                "on-tertiary-container": "#fdfcff",
+                "on-primary-container": "#fffbff",
+                "error": "#ba1a1a",
+                "surface-container-low": "#eef4ff",
+                "on-tertiary": "#ffffff",
+                "tertiary": "#006096",
+                "surface-container-high": "#dfe9fa",
+                "outline": "#887364",
+                "inverse-primary": "#ffb77d",
+                "surface-bright": "#f8f9ff",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#f7ba8a",
+                "inverse-surface": "#27313e",
+                "tertiary-fixed-dim": "#96ccff",
+                "on-error": "#ffffff",
+                "secondary-fixed": "#ffdcc3",
+                "outline-variant": "#dbc2b0",
+                "background": "#f8f9ff",
+                "on-tertiary-fixed": "#001d32",
+                "on-primary-fixed-variant": "#6e3900",
+                "on-primary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "on-surface": "#121c28",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#007abd",
+                "primary": "#8d4b00",
+                "surface-tint": "#904d00",
+                "on-tertiary-fixed-variant": "#004a75",
+                "on-surface-variant": "#554336",
+                "inverse-on-surface": "#eaf1ff",
+                "secondary": "#82542c",
+                "primary-fixed": "#ffdcc3",
+                "surface-container": "#e5eeff",
+                "on-secondary-fixed-variant": "#673d17",
+                "on-secondary-container": "#784c25",
+                "on-primary-fixed": "#2f1500",
+                "on-background": "#121c28",
+                "tertiary-fixed": "#cee5ff",
+                "surface": "#f8f9ff",
+                "primary-fixed-dim": "#ffb77d",
+                "secondary-container": "#fdbf8f",
+                "on-error-container": "#93000a",
+                "primary-container": "#b15f00",
+                "surface-container-highest": "#d9e3f4",
+                "surface-variant": "#d9e3f4",
+                "on-secondary-fixed": "#2f1500"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scale-98-on-click:active { transform: scale(0.98); }
+        .tonal-shift-bg { background-color: #f8f9ff; }
+        .tonal-layering-surface-container-low { background-color: #eef4ff; }
+    </script>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+
+    <!-- SideNavBar -->
+    <aside class="fixed left-0 top-0 h-full z-40 h-screen w-64 hidden lg:flex flex-col border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-900 font-manrope antialiased">
+        <div class="p-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">restaurant</span>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-amber-900 dark:text-amber-500 tracking-tight">La CartAI</h1>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Premium Concierge</p>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="flex-1 px-4 space-y-1 mt-4">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="font-medium">Dashboard</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg">
+                <span class="material-symbols-outlined">restaurant_menu</span>
+                <span class="font-medium">Menu Editor</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg">
+                <span class="material-symbols-outlined">receipt_long</span>
+                <span class="font-medium">Orders</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg">
+                <span class="material-symbols-outlined">qr_code_2</span>
+                <span class="font-medium">QR Management</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-amber-800 dark:text-amber-400 font-semibold shadow-sm rounded-lg">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+                <span class="font-medium">Settings</span>
+            </a>
+        </nav>
+
+        <div class="p-4 mt-auto border-t border-slate-200/50 dark:border-slate-800/50">
+            <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl">
+                <p class="text-xs font-bold text-amber-800 dark:text-amber-400 mb-1">PLAN PREMIUM</p>
+                <p class="text-[11px] text-amber-700/70 dark:text-amber-500/70">Renueva en 12 días</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- TopNavBar -->
+    <header class="fixed top-0 right-0 left-0 lg:left-64 z-30 flex justify-between items-center px-6 h-16 border-b border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md font-manrope text-sm font-medium">
+        <div class="flex items-center gap-4 lg:hidden">
+            <span class="material-symbols-outlined text-on-surface">menu</span>
+            <span class="text-lg font-black text-amber-800 dark:text-amber-500">La CartAI</span>
+        </div>
+
+        <div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full w-96">
+            <span class="material-symbols-outlined text-slate-400 text-lg mr-2">search</span>
+            <input type="text" placeholder="Buscar en configuración..." class="bg-transparent border-none focus:ring-0 text-sm w-full">
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button class="hidden sm:flex items-center gap-2 px-4 py-2 text-slate-500 hover:text-amber-600 transition-colors">
+                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                <span>View Site</span>
+            </button>
+            <button class="bg-primary hover:bg-primary-container text-white px-5 py-2 rounded-lg font-bold transition-all shadow-sm scale-98-on-click">
+                Save Changes
+            </button>
+            <div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-slate-500 cursor-pointer">notifications</span>
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=100" 
+                     data-alt="professional portrait of a restaurant manager in a stylish modern office setting with warm ambient lighting" 
+                     class="w-8 h-8 rounded-full border border-slate-200 object-cover">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="lg:ml-64 pt-24 pb-32 px-6 min-h-screen">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header Section (Asymmetric Editorial Style) -->
+            <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <h2 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-2">Ajustes del Negocio</h2>
+                    <p class="text-slate-500 font-medium max-w-md">Gestiona la identidad visual, horarios y el punto de acceso digital de tu establecimiento.</p>
+                </div>
+                <div class="flex items-center gap-4 bg-white p-2 rounded-2xl shadow-sm border border-slate-50">
+                    <div class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                        <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        En línea
+                    </div>
+                    <span class="text-xs text-slate-400 pr-2">Último cambio hace 2 horas</span>
+                </div>
+            </div>
+
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                
+                <!-- Section 1: Business Data (Large Card) -->
+                <div class="md:col-span-8 bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-sm border border-slate-50 dark:border-slate-800">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="p-2 bg-amber-50 rounded-lg">
+                            <span class="material-symbols-outlined text-primary">storefront</span>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold">Datos del Establecimiento</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="group">
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 px-1">Nombre Comercial</label>
+                                <input type="text" value="La CartAI Restaurant" class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary-fixed text-on-surface font-medium transition-all shadow-sm">
+                            </div>
+                            <div class="group">
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 px-1">Dirección Física</label>
+                                <textarea rows="2" class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary-fixed text-on-surface font-medium transition-all shadow-sm">Calle de la Gastronomía 42, 28001, Madrid</textarea>
+                            </div>
+                            <div class="group">
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 px-1">Teléfono de Contacto</label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-lg">call</span>
+                                    <input type="text" value="+34 912 345 678" class="w-full bg-surface-container-lowest border-none rounded-xl p-4 pl-12 focus:ring-2 focus:ring-primary-fixed text-on-surface font-medium transition-all shadow-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center justify-center p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-700">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=200" 
+                                 data-alt="minimalist modern restaurant logo with elegant typography and a stylized leaf icon on a clean white background" 
+                                 class="w-24 h-24 rounded-2xl object-cover mb-4 shadow-md">
+                            <p class="text-sm font-bold text-on-surface mb-1">Logo Principal</p>
+                            <p class="text-[11px] text-slate-400 mb-4 text-center">SVG, PNG o JPG (Máx. 2MB).<br>Recomendado: 512x512px</p>
+                            <button class="flex items-center gap-2 px-4 py-2 bg-white text-on-surface border border-slate-200 rounded-lg text-xs font-bold hover:bg-slate-50 transition-colors">
+                                <span class="material-symbols-outlined text-sm">edit</span>
+                                Cambiar Logo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Public URL (Small Sidebar Card) -->
+                <div class="md:col-span-4 space-y-6">
+                    <div class="bg-tertiary text-white rounded-3xl p-6 shadow-lg relative overflow-hidden">
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="material-symbols-outlined">link</span>
+                                <h3 class="font-bold">URL Pública</h3>
+                            </div>
+                            <p class="text-sm text-tertiary-fixed mb-4">Personaliza el enlace directo a tu carta digital.</p>
+                            <div class="bg-white/10 backdrop-blur-md rounded-xl p-3 flex items-center gap-1 border border-white/20">
+                                <span class="text-xs opacity-60">carta.app/</span>
+                                <input type="text" value="lumiere-dining" class="bg-transparent border-none p-0 focus:ring-0 text-sm font-bold w-full placeholder:text-white/30">
+                            </div>
+                        </div>
+                        <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-sm border border-slate-50 dark:border-slate-800">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+                                Horarios
+                            </h3>
+                            <button class="text-primary text-xs font-bold">Editar todo</button>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between py-2 border-b border-slate-50">
+                                <span class="text-sm font-medium text-slate-600">Lunes - Viernes</span>
+                                <span class="text-sm font-bold text-on-surface">13:00 - 23:30</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 border-b border-slate-50">
+                                <span class="text-sm font-medium text-slate-600">Sábado</span>
+                                <span class="text-sm font-bold text-on-surface">12:30 - 00:00</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2">
+                                <span class="text-sm font-medium text-slate-600">Domingo</span>
+                                <span class="text-xs bg-slate-100 text-slate-400 px-2 py-0.5 rounded-full font-bold">CERRADO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: QR Module (Wide Layout) -->
+                <div class="md:col-span-12 bg-surface-container-low dark:bg-slate-900 rounded-[2rem] p-8 md:p-12">
+                    <div class="flex flex-col lg:flex-row gap-12 items-center">
+                        <!-- QR Preview -->
+                        <div class="relative group">
+                            <div class="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-tertiary/20 blur-2xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative bg-white p-8 rounded-[2.5rem] shadow-xl border border-white/50">
+                                <div class="w-64 h-64 bg-slate-50 rounded-2xl flex items-center justify-center border-4 border-primary/10">
+                                    <div class="relative flex items-center justify-center">
+                                        <!-- Mock QR Code with logo center -->
+                                        <div class="grid grid-cols-4 gap-2 w-48 h-48 opacity-90">
+                                            <div class="bg-primary w-full h-full rounded-sm"></div><div class="bg-slate-300 w-full h-full rounded-sm"></div><div class="bg-primary w-full h-full rounded-sm"></div><div class="bg-primary w-full h-full rounded-sm"></div>
+                                            <div class="bg-slate-300 w-full h-full rounded-sm"></div><div class="bg-primary w-full h-full rounded-sm"></div><div class="bg-slate-200 w-full h-full rounded-sm"></div><div class="bg-slate-300 w-full h-full rounded-sm"></div>
+                                            <div class="bg-primary w-full h-full rounded-sm"></div><div class="bg-slate-200 w-full h-full rounded-sm"></div><div class="bg-primary w-full h-full rounded-sm"></div><div class="bg-primary w-full h-full rounded-sm"></div>
+                                            <div class="bg-primary w-full h-full rounded-sm"></div><div class="bg-primary w-full h-full rounded-sm"></div><div class="bg-slate-300 w-full h-full rounded-sm"></div><div class="bg-primary w-full h-full rounded-sm"></div>
+                                        </div>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="bg-white p-2 rounded-lg shadow-md border border-slate-100">
+                                                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=50" data-alt="small icon logo of a restaurant for qr center" class="w-8 h-8 rounded-md">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Escanea para ver la carta</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- QR Controls -->
+                        <div class="flex-1 space-y-8">
+                            <div>
+                                <h3 class="font-headline text-3xl font-extrabold text-on-surface mb-2">Gestión de QR Dinámico</h3>
+                                <p class="text-slate-500 font-medium">Personaliza el diseño de tu código QR para que coincida con la estética de tu mesa.</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <button class="flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-on-surface border border-slate-200 p-4 rounded-2xl font-bold transition-all shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">download</span>
+                                    Descargar PNG
+                                </button>
+                                <button class="flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-on-surface border border-slate-200 p-4 rounded-2xl font-bold transition-all shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">picture_as_pdf</span>
+                                    Descargar PDF
+                                </button>
+                            </div>
+
+                            <div class="space-y-4">
+                                <label class="block text-sm font-bold text-on-surface">Opciones de personalización</label>
+                                <div class="flex flex-wrap gap-4">
+                                    <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-100 cursor-pointer hover:border-primary transition-colors">
+                                        <div class="w-6 h-6 rounded-full bg-primary border-2 border-white shadow-sm"></div>
+                                        <span class="text-sm font-medium">Color QR</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-100 cursor-pointer hover:border-primary transition-colors">
+                                        <span class="material-symbols-outlined text-slate-400">image</span>
+                                        <span class="text-sm font-medium">Añadir Logo al centro</span>
+                                        <div class="w-8 h-4 bg-emerald-100 rounded-full relative">
+                                            <div class="absolute right-0 top-0 w-4 h-4 bg-emerald-500 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-100 cursor-pointer hover:border-primary transition-colors">
+                                        <span class="material-symbols-outlined text-slate-400">grid_view</span>
+                                        <span class="text-sm font-medium">Estilo de puntos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- BottomNavBar (Mobile) -->
+    <nav class="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white dark:bg-slate-950 z-50 rounded-t-2xl shadow-[0_-4px_12px_rgba(0,0,0,0.05)] border-t border-slate-200 dark:border-slate-800">
+        <a href="#" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-inter text-[10px] font-bold">
+            <span class="material-symbols-outlined">home</span>
+            <span>Home</span>
+        </a>
+        <a href="#" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-inter text-[10px] font-bold">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span>Menu</span>
+        </a>
+        <a href="#" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-inter text-[10px] font-bold">
+            <span class="material-symbols-outlined">qr_code</span>
+            <span>QR</span>
+        </a>
+        <a href="#" class="flex flex-col items-center justify-center text-amber-700 dark:text-amber-500 bg-amber-50 dark:bg-amber-900/20 rounded-xl px-3 py-1 font-inter text-[10px] font-bold">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+            <span>Settings</span>
+        </a>
+    </nav>
+
+</body>
+</html></style></head><body></body></html>

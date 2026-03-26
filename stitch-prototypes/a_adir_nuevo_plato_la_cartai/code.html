@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#673d17",
+              "primary": "#8d4b00",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#554336",
+              "on-error": "#ffffff",
+              "primary-container": "#b15f00",
+              "outline-variant": "#dbc2b0",
+              "surface-bright": "#f8f9ff",
+              "on-tertiary-fixed": "#001d32",
+              "on-tertiary-fixed-variant": "#004a75",
+              "secondary-fixed-dim": "#f7ba8a",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#6e3900",
+              "surface-variant": "#d9e3f4",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#006096",
+              "inverse-surface": "#27313e",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fdbf8f",
+              "surface-container-high": "#dfe9fa",
+              "on-secondary-fixed": "#2f1500",
+              "tertiary-fixed": "#cee5ff",
+              "background": "#f8f9ff",
+              "outline": "#887364",
+              "inverse-on-surface": "#eaf1ff",
+              "secondary": "#82542c",
+              "surface-tint": "#904d00",
+              "primary-fixed": "#ffdcc3",
+              "on-background": "#121c28",
+              "surface-dim": "#d1dbec",
+              "surface-container": "#e5eeff",
+              "on-tertiary-container": "#fdfcff",
+              "on-surface": "#121c28",
+              "on-primary-container": "#fffbff",
+              "secondary-fixed": "#ffdcc3",
+              "primary-fixed-dim": "#ffb77d",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#2f1500",
+              "on-secondary-container": "#784c25",
+              "inverse-primary": "#ffb77d",
+              "surface": "#f8f9ff",
+              "tertiary-fixed-dim": "#96ccff",
+              "surface-container-highest": "#d9e3f4",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#eef4ff",
+              "tertiary-container": "#007abd"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; color: #121c28; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .allergen-card:hover { background-color: #ffdcc3; }
+        .allergen-active { background-color: #ffdcc3; border: 1px solid #8d4b00; }
+        /* No-line rule application via tonal shifts */
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="hidden md:flex flex-col py-6 gap-2 bg-slate-100 dark:bg-slate-900 docked left-0 h-full w-64 fixed border-r-0 shadow-none">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-extrabold text-amber-700 dark:text-amber-500">La CartAI</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-1">Management Suite</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 py-3 px-4 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg mx-2 hover:translate-x-1 transition-transform duration-200 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-medium text-sm">Menu</span>
+</a>
+<!-- Active State: Dishes (Platos) is active since we are adding a dish -->
+<a class="flex items-center gap-3 py-3 px-4 bg-white dark:bg-slate-800 text-amber-700 dark:text-amber-400 shadow-sm rounded-lg mx-2 hover:translate-x-1 transition-transform duration-200 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined">tapas</span>
+<span class="font-medium text-sm">Dishes</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg mx-2 hover:translate-x-1 transition-transform duration-200 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-medium text-sm">Categories</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg mx-2 hover:translate-x-1 transition-transform duration-200 cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Restaurant Logo" data-alt="professional modern minimalist restaurant logo icon on a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIb8-wVaRJCYwe3bYToRGuFUazEqdfxgNl9qvzhBoGdJE3pPFXpxEiaXVFpToqfhph2SklSKVnYQ0gL1-m9D63H7SzUnpsK5uDPiPGqvbQCJUc7K7shPX_RDlcJsXt_Wuqf8YC9-C-ac8GCi5YqwEBwKoccY0N_knWZ893JAEAx5AMvaPE0nO88_q0YadXZkXjt2MkNN_v_i4vYHPcOQ0qeXSIDKYnP5ZNpQtvBmWJsaY1qMto2ZkR_nC2W0uo4dXXPznnWFHGG-HP"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Chef de Cuisine</span>
+<span class="text-[10px] text-outline">Admin Access</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 bg-background min-h-screen">
+<!-- Header Section -->
+<header class="h-20 px-8 flex items-center justify-between bg-surface sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+</button>
+<h2 class="text-2xl font-bold tracking-tight text-on-surface font-headline">Añadir Nuevo Plato</h2>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">notifications</span>
+<span class="material-symbols-outlined text-outline">account_circle</span>
+</div>
+</header>
+<div class="p-8 max-w-6xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Primary Form -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Section: General Info -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-6">
+<div class="border-l-4 border-primary pl-4">
+<h3 class="text-lg font-bold text-on-surface font-headline uppercase tracking-wide">Información General</h3>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1.5">Nombre del Plato</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary-fixed text-on-surface placeholder:text-outline/50" placeholder="Ej. Hamburguesa Wagyu Deluxe" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1.5">Descripción o Receta</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary-fixed text-on-surface placeholder:text-outline/50" placeholder="Describe los ingredientes, proceso de elaboración y notas del chef..." rows="4"></textarea>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1.5">Categoría</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary-fixed text-on-surface">
+<option>Entrantes</option>
+<option selected="">Hamburguesas Gourmet</option>
+<option>Postres Artesanales</option>
+<option>Bebidas</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1.5">Precio de Venta</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-2 focus:ring-primary-fixed text-on-surface pl-8" placeholder="0.00" step="0.01" type="number"/>
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-primary font-bold">€</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Allergens -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-6">
+<div class="border-l-4 border-primary pl-4 flex justify-between items-center">
+<h3 class="text-lg font-bold text-on-surface font-headline uppercase tracking-wide">Alérgenos (UE Oficial)</h3>
+<span class="text-xs font-medium text-outline bg-surface-container-low px-2 py-1 rounded">Multiselección</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3">
+<!-- Allergen Items -->
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low transition-all cursor-pointer allergen-active">
+<span class="material-symbols-outlined text-primary mb-1">grass</span>
+<span class="text-[10px] font-bold text-center">GLUTEN</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">set_meal</span>
+<span class="text-[10px] font-bold text-center uppercase">Crustáceos</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low transition-all cursor-pointer allergen-active">
+<span class="material-symbols-outlined text-primary mb-1">egg</span>
+<span class="text-[10px] font-bold text-center">HUEVOS</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">phishing</span>
+<span class="text-[10px] font-bold text-center uppercase">Pescado</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">eco</span>
+<span class="text-[10px] font-bold text-center uppercase">Cacahuetes</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">spa</span>
+<span class="text-[10px] font-bold text-center uppercase">Soja</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low transition-all cursor-pointer allergen-active">
+<span class="material-symbols-outlined text-primary mb-1">icecream</span>
+<span class="text-[10px] font-bold text-center uppercase">Lácteos</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">nutrition</span>
+<span class="text-[10px] font-bold text-center uppercase">Frutos Cáscara</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">psychology_alt</span>
+<span class="text-[10px] font-bold text-center uppercase">Apio</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">flatware</span>
+<span class="text-[10px] font-bold text-center uppercase">Mostaza</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">grain</span>
+<span class="text-[10px] font-bold text-center uppercase">Sésamo</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">science</span>
+<span class="text-[10px] font-bold text-center uppercase">Sulfitos</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">filter_vintage</span>
+<span class="text-[10px] font-bold text-center uppercase">Altramuces</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mb-1">water_drop</span>
+<span class="text-[10px] font-bold text-center uppercase">Moluscos</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Visuals & Actions -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Image Upload/Preview -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-sm space-y-4">
+<div class="border-l-4 border-primary pl-4">
+<h3 class="text-sm font-bold text-on-surface font-headline uppercase tracking-wide">Imagen del Plato</h3>
+</div>
+<div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container-low border-2 border-dashed border-outline-variant hover:border-primary transition-colors cursor-pointer">
+<img alt="Gourmet Burger Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close-up of a premium gourmet wagyu beef burger with melting cheese, fresh lettuce, and brioche bun in professional studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCbb_oEt3gjWOpqQkEW1RFseIUnGAvIxCxTftb7lMqN-szxWy-IAICvt8VJrVWfnZGvEQQE-DbDz16dplO4ebgHAoJWQk0lCIrFP95KzyRbqnjXguFup0eKf7Fkb1-YU90u9PVS1Pc30otntrwTQ7-Uur5tfLsFuV2-D5hcfUNlUd-zUFWHKF0F6O7p7CwwRnSpy1FpvlfhTHUmZlFZpQvYsRwzD958L_2QzOFl46FOSN4QyaPvnUZLHFefzZTMKSiTcK_nNIckR0q"/>
+<div class="absolute inset-0 bg-on-background/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<div class="flex flex-col items-center text-white">
+<span class="material-symbols-outlined text-3xl">upload</span>
+<span class="text-xs font-bold mt-2">Cambiar Imagen</span>
+</div>
+</div>
+</div>
+<p class="text-[10px] text-outline text-center">Recomendado: 1080x1080px, máx 2MB</p>
+</section>
+<!-- Visibility & Scheduling -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-sm space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface font-headline uppercase">Plato del Día</span>
+<span class="text-[10px] text-outline">Publicar fuera de carta</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="p-4 bg-primary-fixed/30 rounded-lg space-y-3">
+<label class="block text-xs font-bold text-on-primary-fixed-variant">Vigencia hasta</label>
+<div class="flex items-center gap-2 bg-white/60 p-2 rounded-md">
+<span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+<input class="bg-transparent border-none p-0 text-sm font-medium w-full focus:ring-0" type="text" value="30 Oct 2023"/>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<div class="space-y-3">
+<button class="w-full py-4 bg-gradient-to-b from-primary to-primary-container text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span>Guardar y analizar precios</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+<button class="w-full py-4 bg-surface-container-low text-on-surface-variant rounded-xl font-semibold border border-outline-variant/20 hover:bg-surface-container transition-colors">
+                            Descartar cambios
+                        </button>
+</div>
+<!-- AI Insights Placeholder -->
+<div class="p-4 bg-tertiary-fixed/40 rounded-xl border border-tertiary-container/10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-tertiary-container text-sm">info</span>
+<span class="text-[10px] font-bold text-tertiary-container uppercase tracking-wider">Sugerencia IA</span>
+</div>
+<p class="text-[11px] leading-relaxed text-on-tertiary-fixed-variant">
+                            El precio medio de hamburguesas similares en tu zona es de **14,50€**. Considera ajustar para maximizar rentabilidad.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Mobile Nav (Only visible on small screens) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white flex items-center justify-around border-t-0 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-20">
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="text-[10px]">Menu</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">tapas</span>
+<span class="text-[10px] font-bold">Platos</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px]">Precios</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px]">Config</span>
+</a>
+</nav>
+</body></html>

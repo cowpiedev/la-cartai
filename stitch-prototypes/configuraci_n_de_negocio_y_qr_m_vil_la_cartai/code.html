@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>La CartAI - Configuración de Negocio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#d1dbec",
+                        "on-tertiary-container": "#fdfcff",
+                        "on-primary-container": "#fffbff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#eef4ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#006096",
+                        "surface-container-high": "#dfe9fa",
+                        "outline": "#887364",
+                        "inverse-primary": "#ffb77d",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#f7ba8a",
+                        "inverse-surface": "#27313e",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffdcc3",
+                        "outline-variant": "#dbc2b0",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#121c28",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#007abd",
+                        "primary": "#8d4b00",
+                        "surface-tint": "#904d00",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-surface-variant": "#554336",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary": "#82542c",
+                        "primary-fixed": "#ffdcc3",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#673d17",
+                        "on-secondary-container": "#784c25",
+                        "on-primary-fixed": "#2f1500",
+                        "on-background": "#121c28",
+                        "tertiary-fixed": "#cee5ff",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#ffb77d",
+                        "secondary-container": "#fdbf8f",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#b15f00",
+                        "surface-container-highest": "#d9e3f4",
+                        "surface-variant": "#d9e3f4",
+                        "on-secondary-fixed": "#2f1500"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar (Shell) -->
+<header class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-md docked full-width top-0 z-30 flex justify-between items-center w-full px-6 h-16 border-b border-slate-100 dark:border-slate-800 sticky top-0">
+<div class="lg:hidden text-lg font-black text-amber-800 dark:text-amber-500 tracking-tight">La CartAI</div>
+<div class="hidden md:flex items-center gap-6">
+<span class="text-amber-800 dark:text-amber-400 border-b-2 border-amber-600 font-manrope text-sm font-medium h-16 flex items-center">Configuración</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400 hover:text-amber-600 active:opacity-70 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="bg-primary hover:bg-primary-container text-white px-4 py-1.5 rounded-lg text-sm font-semibold transition-all shadow-sm active:scale-95">
+                Guardar
+            </button>
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 pt-6 pb-28">
+<!-- Header Editorial Moment -->
+<section class="mb-8">
+<h1 class="font-headline font-extrabold text-3xl text-on-surface tracking-tight leading-tight">Gestión del <span class="text-primary">Negocio</span></h1>
+<p class="text-on-surface-variant mt-2 text-sm leading-relaxed">Personaliza la identidad visual y operativa de tu establecimiento para tus clientes.</p>
+</section>
+<!-- Business Data Section -->
+<section class="space-y-4 mb-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="storefront">storefront</span>
+<h2 class="font-headline font-bold text-lg">Datos del Establecimiento</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col items-center gap-6">
+<!-- Logo Upload -->
+<div class="relative group">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container shadow-inner bg-surface-container-low">
+<img alt="Business Logo" class="w-full h-full object-cover" data-alt="minimalist modern restaurant logo with amber and white abstract shapes and elegant serif typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTpSBlOzf69KM-aVhjfX3FMKVVUh1YzOO3Q1LE_5cHutIOCyBQVQOecDI41ivNQO78AyJHCD4o4J7IkZV6pOeTdztc7XnbIFjJyOcvIGTgo5GHqtiIHKk-J9a_PonHKhljhJhwGGoc6P3LdP6tKZy9BlFw8QUWwteDISrUMkG6x9Xkbhh0abdKMRkcLLZwykdnTTZlH6HUUDUptRCqeqvfqtBMh03kU_t5fE6oc28HzBC5SAPa-i26EZWsArbPGtQO3PZT8b_JkQcd"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="w-full space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider px-1">Nombre Comercial</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="text" value="La Terrazza Concierge"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider px-1">Dirección Física</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="text" value="Av. del Mar 452, Puerto Banús"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider px-1">Teléfono de Contacto</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all font-medium" type="tel" value="+34 600 123 456"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Schedule Section -->
+<section class="space-y-4 mb-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="schedule">schedule</span>
+<h2 class="font-headline font-bold text-lg">Horario de Servicio</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 border-b border-surface-container flex justify-between items-center bg-surface-container-low/50">
+<span class="font-semibold text-sm">Lunes - Viernes</span>
+<span class="text-primary font-bold text-sm">08:00 - 22:30</span>
+</div>
+<div class="p-4 border-b border-surface-container flex justify-between items-center">
+<span class="font-semibold text-sm">Sábados</span>
+<span class="text-primary font-bold text-sm">09:00 - 00:00</span>
+</div>
+<div class="p-4 flex justify-between items-center bg-surface-container-low/50">
+<span class="font-semibold text-sm">Domingos</span>
+<span class="text-error font-bold text-sm uppercase tracking-tight">Cerrado</span>
+</div>
+<button class="w-full py-4 text-center text-primary font-bold text-sm border-t border-surface-container hover:bg-primary/5 transition-colors">
+                    Editar Horarios Completos
+                </button>
+</div>
+</section>
+<!-- Custom URL Section -->
+<section class="space-y-4 mb-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="link">link</span>
+<h2 class="font-headline font-bold text-lg">URL Personalizada</h2>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border border-primary/10">
+<div class="flex items-center gap-3 bg-surface-container-low rounded-lg p-3">
+<span class="text-on-surface-variant font-medium text-xs">lacartai.app/</span>
+<input class="flex-1 bg-transparent border-none p-0 text-primary font-bold text-sm focus:ring-0" type="text" value="laterrazza-puerto"/>
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="content_copy">content_copy</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2 px-1">Este es el enlace directo a tu menú digital.</p>
+</div>
+</section>
+<!-- QR Generator Section -->
+<section class="space-y-4 mb-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="qr_code_2">qr_code_2</span>
+<h2 class="font-headline font-bold text-lg">Generador de QR</h2>
+</div>
+<div class="bg-white rounded-2xl p-8 shadow-[0_20px_40px_rgba(18,28,40,0.04)] flex flex-col items-center gap-8 relative overflow-hidden border border-surface-container">
+<!-- Background decorative element -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative bg-white p-4 rounded-xl shadow-lg">
+<img alt="QR Code Preview" class="w-48 h-48" data-alt="high quality professional qr code in deep amber color on white background with clean margins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-SfTtAJREVa2moRbIFcqsLlu_NCDv6hZ-N6LGyR0QPhcl-JSOL3oRKYMAUlyUfmwUXdRCWnK__6tVoOQ_X_kFv_HTbJrsviYP9f6nopXh2LLJ5oL103uzKoUat_thepwjK5Q7Z_7cx5IM01tV4-pOQ4qPoOHGiMzjxraSFx53o8GZnCmxwU3EMrzb1WUoO8IhBicRQw-wiBrz9nD9eBup_N_qGydnmLevZVWWuVQRNJM585TIleF8hIlC2IAh_8s4nms6AhI3uf4A"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="restaurant">restaurant</span>
+</div>
+</div>
+<div class="w-full grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-3.5 border border-outline-variant/30 rounded-xl text-on-surface font-bold text-sm active:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+                        Vista Previa
+                    </button>
+<button class="flex items-center justify-center gap-2 py-3.5 bg-primary text-white rounded-xl font-bold text-sm shadow-[0_4px_12px_rgba(141,75,0,0.3)] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="download">download</span>
+                        Descargar
+                    </button>
+</div>
+<p class="text-center text-xs text-on-surface-variant italic leading-tight">Incluye tu logo y colores corporativos automáticamente en la descarga.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shell) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white dark:bg-slate-950 z-50 rounded-t-2xl border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-inter text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-inter text-[10px] font-bold">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code">qr_code</span>
+<span class="font-inter text-[10px] font-bold">QR</span>
+</a>
+<a class="flex flex-col items-center justify-center text-amber-700 dark:text-amber-500 bg-amber-50 dark:bg-amber-900/20 rounded-xl px-3 py-1 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-inter text-[10px] font-bold">Settings</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#e5eeff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdcc3",
+                        "surface": "#f8f9ff",
+                        "outline-variant": "#dbc2b0",
+                        "on-surface": "#121c28",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d9e3f4",
+                        "on-secondary-fixed-variant": "#673d17",
+                        "surface-dim": "#d1dbec",
+                        "inverse-primary": "#ffb77d",
+                        "on-surface-variant": "#554336",
+                        "surface-container-low": "#eef4ff",
+                        "outline": "#887364",
+                        "primary": "#8d4b00",
+                        "on-secondary-fixed": "#2f1500",
+                        "secondary-fixed-dim": "#f7ba8a",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#b15f00",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdcc3",
+                        "surface-container-highest": "#d9e3f4",
+                        "on-background": "#121c28",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#784c25",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed": "#cee5ff",
+                        "surface-container-high": "#dfe9fa",
+                        "tertiary-container": "#007abd",
+                        "on-primary-fixed": "#2f1500",
+                        "inverse-surface": "#27313e",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "background": "#f8f9ff",
+                        "secondary": "#82542c",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#006096",
+                        "primary-fixed-dim": "#ffb77d",
+                        "secondary-container": "#fdbf8f",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-tint": "#904d00",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-tertiary-container": "#fdfcff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+<!-- SideNavBar Implementation -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-slate-50 dark:bg-slate-900 font-manrope antialiased tracking-tight flex flex-col py-6 z-50">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-slate-900 dark:text-slate-50 leading-none">La CartAI</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mt-1">Superadmin Console</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<!-- Overview - Active -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-amber-700 dark:text-amber-400 font-semibold border-r-4 border-amber-600 bg-amber-50/50 dark:bg-amber-900/10 transition-all duration-200 ease-in-out active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-sm">Businesses</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm">Billing</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50">
+<p class="text-xs font-medium text-slate-500 mb-2">System Status</p>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-xs font-semibold text-slate-700 dark:text-slate-300">All Systems Operational</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Implementation -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 flex items-center justify-between px-8 shadow-sm dark:shadow-none">
+<div class="flex items-center w-1/3">
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-amber-500/20 transition-all placeholder:text-slate-400" placeholder="Search businesses, users, or reports..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<button class="relative hover:text-slate-800 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-white"></span>
+</button>
+<button class="hover:text-slate-800 transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-px bg-slate-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-slate-900">Admin User</p>
+<p class="text-[10px] text-slate-500">Superadmin</p>
+</div>
+<img alt="Admin User Profile" class="w-10 h-10 rounded-full border-2 border-primary-fixed bg-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO3bdrL_qJ5Faq8RD-ZlZxK1-iXSZSxpOr7R8M_PINrkpBuFLB9UGt9nbeYD6WFRIqxfMITMwT4C-FWEDChIpQO9Nnrdd1PbYXEcFbYecEkmoKtulCN253t16EYxCdsawX0ANC5mxUEOWOp9ws7thiriMRAuR0RU285XES3PWgimrHRSFW1VqLla4-VZYMIFOyDb1qj0FVwrsmpZQdWkIANe5V3MjnY3IxeVms4u_POswpkJaI8Z9l6FUqD2m6xW60T_GRHz14AsP1"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-24 pb-12 px-8 min-h-screen">
+<!-- Header Section -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-on-surface mb-2">Panel de Control</h2>
+<p class="text-slate-500 text-lg">Bienvenido al núcleo de gestión de <span class="font-bold text-primary italic">La CartAI</span>. Monitorea el crecimiento y gestiona tus clientes.</p>
+</div>
+<div>
+<button class="bg-gradient-to-b from-primary to-primary-container text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all active:scale-95">
+<span class="material-symbols-outlined">add_business</span>
+                    Añadir nuevo negocio
+                </button>
+</div>
+</div>
+<!-- Global Metrics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-8xl">store</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 rounded-lg bg-primary-fixed/30 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<span class="flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                        +12%
+                    </span>
+</div>
+<h3 class="text-slate-500 text-sm font-medium mb-1">Total de Negocios</h3>
+<p class="text-3xl font-extrabold font-headline text-on-surface">1,240</p>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-8xl">restaurant</span>
+</div>
+<div class="p-2 rounded-lg bg-tertiary-fixed/30 text-tertiary w-fit mb-4">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h3 class="text-slate-500 text-sm font-medium mb-1">Platos Creados</h3>
+<p class="text-3xl font-extrabold font-headline text-on-surface">45,800</p>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-8xl">visibility</span>
+</div>
+<div class="p-2 rounded-lg bg-secondary-fixed/30 text-secondary w-fit mb-4">
+<span class="material-symbols-outlined">qr_code_2</span>
+</div>
+<h3 class="text-slate-500 text-sm font-medium mb-1">Accesos a Cartas</h3>
+<p class="text-3xl font-extrabold font-headline text-on-surface">120,5k</p>
+<p class="text-[10px] text-slate-400 mt-2">Last 30 days active sessions</p>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10 relative overflow-hidden group border-b-4 border-b-primary">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-8xl">loyalty</span>
+</div>
+<div class="p-2 rounded-lg bg-primary-fixed text-on-primary-fixed w-fit mb-4">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<h3 class="text-slate-500 text-sm font-medium mb-1">Suscripciones Activas</h3>
+<p class="text-3xl font-extrabold font-headline text-on-surface">980</p>
+</div>
+</section>
+<!-- Business Management Section -->
+<div class="bg-surface-container-lowest rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-white/50">
+<!-- Table Controls -->
+<div class="p-6 border-b border-surface-container flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4 flex-1">
+<h3 class="text-xl font-bold font-headline pr-4 border-r border-slate-200">Negocios</h3>
+<div class="flex items-center gap-2">
+<select class="bg-surface-container-low border-none text-xs font-semibold rounded-full px-4 py-2 focus:ring-2 focus:ring-primary/20">
+<option>Estado: Todos</option>
+<option>Activo</option>
+<option>Inactivo</option>
+<option>Prueba</option>
+</select>
+<select class="bg-surface-container-low border-none text-xs font-semibold rounded-full px-4 py-2 focus:ring-2 focus:ring-primary/20">
+<option>Plan: Todos</option>
+<option>Free</option>
+<option>Pro</option>
+<option>Enterprise</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-2 text-slate-400">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<!-- Management Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Nombre del Negocio</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Plan</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Estado</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Fecha Registro</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="minimalist modern bistro logo with fork and knife icon on cream background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlA-NI5rJHem6QfWdX5uC0O117K2u0eL3PNFx7bmW4kC1m6qaID_kCx66K60W11gvAYuufUqPR0k01U96dTQfelG8UVML3D_qovyra_Kx0ZlmWnh7uOZwYxG38TJbhHGVOXhNYJV91Zejtc3f8qPsPDqQ-8oiYAH_6PqS__eH8cDmrlTAJIWLdVwx0ucyJKOwAHCsX_t7FUozXPhF-1VtkF9I874rfeowknvNAF42S136v6C49pZ9423s0xsytJrtOkw01RVOPwMKF"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Bistro Central</p>
+<p class="text-xs text-slate-400">bistro.central@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-primary-fixed/20 text-on-primary-fixed-variant">Pro</span>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                                    Activo
+                                </span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-600">12 Oct 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-primary-fixed/20 text-primary transition-colors" title="Enter business panel">
+<span class="material-symbols-outlined text-lg">login</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-error-container/50 text-error transition-colors" title="Suspend account">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-tertiary-fixed/30 text-tertiary transition-colors" title="Send notification">
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="luxury italian restaurant logo with elegant serif typography and wheat branch illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRWxMSH6Y-qVcfefan973f6WMm6JAz_MEg2uPPW2n6f9S29zUvqdRkLa73owhmMF09gHLKYlOIHWVHDU3_lo9KV-moYBdo4thM7BANzI_d9vRg8YnjOSJG_zgUINorsIFpQFAaBb9-ThpUw_ejkAtK4ouUTA6PgNYdioSDwUjAEjZeczMABps6KUw2zfBF52rVQvaQcFZdSq8lDzIpUxEoR9ppYDiRSxiUwgBwiaAoADhsqTIHVNeXLcVrdvuSfkL7zXMPl0s-YXA6"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">La Tagliatella</p>
+<p class="text-xs text-slate-400">hq@tagliatella.group</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-on-surface/10 text-on-surface">Enterprise</span>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                                    Activo
+                                </span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-600">05 Jan 2024</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-primary-fixed/20 text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">login</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-error-container/50 text-error transition-colors">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-tertiary-fixed/30 text-tertiary transition-colors">
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="cheerful yellow sun logo for a beach cafe with minimalist wave line underneath" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-oKB7lb411dgGK8jzjAiMuXr9SBu4NRq3AXlaBtBx8uIzP-Lpmj3AeaQT6XraXbS1-qQfjYF4Kh5deqpRmXqQpG1ns-I4XgQ3L46Z1XlWLg85R-o__Nh2uSHySCfUOBtASkG3FjT8hXXNiPBgolgNuOWkcEIQtQ3E2keQ5KFlNJtgSZRK57I7bY-xyl7RtDC2VFtJ09nBbtYU_uEbUnG-oi8mCFE2uXFmGAfbsujQkTy9615dLXoWrd1gH-u0s62bBeam2H_ceUT8"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Cafetería Sol</p>
+<p class="text-xs text-slate-400">admin@cafesol.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-surface-variant text-on-surface-variant">Free</span>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 text-xs font-bold text-amber-600 bg-amber-50 px-3 py-1 rounded-full w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                                    Prueba
+                                </span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-600">28 Feb 2024</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-primary-fixed/20 text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">login</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-error-container/50 text-error transition-colors">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-tertiary-fixed/30 text-tertiary transition-colors">
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="retro classic burger house logo with red circle and cream white vintage typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQIvFtfRKDQlb6-tBtbVdIs2xwRTDe6JJX9XxY_ojFZXfhGc-Za0l2OxfWfv4CjbGJfbadcKjnKHpFdBWS8KeqKVPxspFrxli3pzuGcMcIeAugl52IlYA2XbY0k95m92SeA7B-ckFdxu29era1PyockciTtO8ECCbS1zDM9IP3DouU2j7XTSz0wXIqo-uTDxH5HYi9qfDG6lJAALtsATwobwkhMeAAKVefNNSGkbJ7KhuE2Cfaur6HksZwby-QArxvodXeoagxAWqT"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Burguer House</p>
+<p class="text-xs text-slate-400">contact@burguerhouse.es</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-primary-fixed/20 text-on-primary-fixed-variant">Pro</span>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                                    Inactivo
+                                </span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-600">15 Nov 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-primary-fixed/20 text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">login</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-error-container/50 text-error transition-colors">
+<span class="material-symbols-outlined text-lg">block</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-tertiary-fixed/30 text-tertiary transition-colors">
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-6 bg-surface-container-low/20 flex items-center justify-between border-t border-surface-container">
+<p class="text-sm text-slate-500">Mostrando <span class="font-bold text-on-surface">1-10</span> de <span class="font-bold text-on-surface">1,240</span> negocios</p>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container text-slate-400 disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-white font-bold text-sm">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-slate-600 font-medium text-sm">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-slate-600 font-medium text-sm">3</button>
+<span class="px-2 text-slate-400 text-sm">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-slate-600 font-medium text-sm">124</button>
+<button class="p-2 rounded-lg hover:bg-surface-container text-slate-600">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- System Intelligence Feed (Bottom Section) -->
+<div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-gradient-to-br from-tertiary to-on-tertiary-fixed-variant p-8 rounded-3xl text-white relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-white/20 transition-all"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="uppercase tracking-widest text-xs font-bold opacity-80">IA Insights de Hoy</span>
+</div>
+<h3 class="text-3xl font-headline font-bold mb-4 leading-tight">El uso de "Descripciones Sensoriales" ha aumentado la conversión un 24% esta semana.</h3>
+<p class="text-tertiary-fixed opacity-90 mb-8 max-w-lg">Sugerencia: Notifica a los usuarios del Plan Pro sobre la nueva herramienta de generación de textos persuasivos mediante IA.</p>
+<div class="mt-auto">
+<button class="bg-white text-tertiary px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition-transform">Ver Reporte Detallado</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-3xl flex flex-col">
+<h3 class="text-xl font-bold font-headline mb-6">Registro de Actividad</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+<div>
+<p class="text-sm font-bold">Nuevo Registro: Sushi Master</p>
+<p class="text-xs text-slate-500">Hace 15 minutos • Plan Enterprise</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-tertiary mt-2"></div>
+<div>
+<p class="text-sm font-bold">Pago Recibido: La Tagliatella</p>
+<p class="text-xs text-slate-500">Hace 2 horas • $299.00 USD</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-error mt-2"></div>
+<div>
+<p class="text-sm font-bold">Cuenta Suspendida: Tacos Don Juan</p>
+<p class="text-xs text-slate-500">Hace 4 horas • Impago recurrente</p>
+</div>
+</div>
+</div>
+<button class="mt-auto pt-6 text-sm font-bold text-primary flex items-center justify-center gap-2 border-t border-white/50 hover:gap-3 transition-all">
+                    Ver todo el log
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (Only on Home/Dashboard context) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300">smart_toy</span>
+<div class="absolute right-full mr-4 bg-on-surface text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">
+            Consultar IA Asistente
+        </div>
+</button>
+</body></html>

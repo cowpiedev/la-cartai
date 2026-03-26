@@ -1,0 +1,156 @@
+// Prisma schema — La Carta IA
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum UserRole {
+  superadmin
+  owner
+  staff
+}
+
+enum BusinessPlan {
+  free
+  premium
+}
+
+enum BusinessStatus {
+  active
+  suspended
+  trial
+}
+
+// ---------------------------------------------------------------------------
+// Modelos
+// ---------------------------------------------------------------------------
+
+/// Usuario autenticado (vinculado a Supabase Auth)
+model User {
+  id         String    @id @default(uuid())
+  authId     String    @unique @map("auth_id") // Supabase Auth UID
+  email      String    @unique
+  name       String
+  role       UserRole  @default(owner)
+  businessId String?   @map("business_id")
+  business   Business? @relation("BusinessMembers", fields: [businessId], references: [id], onDelete: SetNull)
+  createdAt  DateTime  @default(now()) @map("created_at")
+
+  /// Negocio del que es propietario (solo rol owner)
+  ownedBusiness Business? @relation("BusinessOwner")
+
+  @@index([email])
+  @@index([authId])
+  @@map("users")
+}
+
+/// Negocio de hostelería registrado en la plataforma
+model Business {
+  id           String       @id @default(uuid())
+  slug         String       @unique              // URL pública: /[slug]
+  name         String
+  address      String?
+  phone        String?
+  logoUrl      String?      @map("logo_url")
+  primaryColor String?      @map("primary_color") // color de marca del negocio
+  plan         BusinessPlan   @default(free)
+  status       BusinessStatus @default(active)
+  ownerId      String         @unique @map("owner_id")
+  owner        User         @relation("BusinessOwner", fields: [ownerId], references: [id])
+  createdAt    DateTime     @default(now()) @map("created_at")
+
+  members    User[]     @relation("BusinessMembers")
+  categories Category[]
+  dishes     Dish[]
+  qrCodes    QRCode[]
+
+  @@index([slug])
+  @@map("businesses")
+}
+
+/// Categoría de platos dentro de una carta
+model Category {
+  id         String   @id @default(uuid())
+  name       String
+  position   Int      @default(0)  // orden de visualización
+  businessId String   @map("business_id")
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  dishes     Dish[]
+
+  @@index([businessId])
+  @@map("categories")
+}
+
+/// Plato de la carta
+model Dish {
+  id             String    @id @default(uuid())
+  name           String
+  description    String?                        // descripción corta (visible en carta pública)
+  recipe         String?                        // elaboración / receta larga
+  photoUrl       String?   @map("photo_url")
+  price          Decimal   @db.Decimal(8, 2)
+  isActive       Boolean   @default(true)  @map("is_active")
+  isDailySpecial Boolean   @default(false) @map("is_daily_special")
+  specialDate    DateTime? @map("special_date") // fecha de vigencia del plato del día / fuera de carta
+  businessId     String    @map("business_id")
+  business       Business  @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  categoryId     String?   @map("category_id")
+  category       Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  createdAt      DateTime  @default(now())  @map("created_at")
+  updatedAt      DateTime  @updatedAt       @map("updated_at")
+
+  allergens DishAllergen[]
+
+  @@index([businessId])
+  @@index([categoryId])
+  @@index([isActive])
+  @@index([isDailySpecial])
+  @@map("dishes")
+}
+
+/// Alérgeno oficial — Reglamento UE 1169/2011 (14 alérgenos)
+model Allergen {
+  id      String @id @default(uuid())
+  name    String @unique              // nombre en español
+  iconUrl String @map("icon_url")    // ruta al icono SVG en /public
+
+  dishes DishAllergen[]
+
+  @@map("allergens")
+}
+
+/// Tabla pivote plato ↔ alérgeno
+model DishAllergen {
+  dishId     String @map("dish_id")
+  allergenId String @map("allergen_id")
+
+  dish     Dish     @relation(fields: [dishId], references: [id], onDelete: Cascade)
+  allergen Allergen @relation(fields: [allergenId], references: [id], onDelete: Cascade)
+
+  @@id([dishId, allergenId])
+  @@map("dish_allergens")
+}
+
+/// Código QR generado para un negocio
+model QRCode {
+  id         String   @id @default(uuid())
+  businessId String   @map("business_id")
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  color      String   @default("#8D4B00")  // color primario del QR (terracota por defecto)
+  logoUrl    String?  @map("logo_url")     // logo superpuesto sobre el QR
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@index([businessId])
+  @@map("qr_codes")
+}

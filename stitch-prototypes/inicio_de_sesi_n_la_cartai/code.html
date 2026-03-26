@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#dfe9fa",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fdbf8f",
+                        "surface-variant": "#d9e3f4",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#006096",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "inverse-surface": "#27313e",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "secondary-fixed-dim": "#f7ba8a",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#673d17",
+                        "error": "#ba1a1a",
+                        "primary": "#8d4b00",
+                        "outline-variant": "#dbc2b0",
+                        "primary-container": "#b15f00",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#554336",
+                        "tertiary-fixed-dim": "#96ccff",
+                        "surface": "#f8f9ff",
+                        "tertiary-container": "#007abd",
+                        "surface-container-highest": "#d9e3f4",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eef4ff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb77d",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-secondary-container": "#784c25",
+                        "inverse-primary": "#ffb77d",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-tint": "#904d00",
+                        "primary-fixed": "#ffdcc3",
+                        "on-background": "#121c28",
+                        "secondary": "#82542c",
+                        "on-primary-container": "#fffbff",
+                        "surface-dim": "#d1dbec",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#121c28",
+                        "on-tertiary-container": "#fdfcff",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed": "#cee5ff",
+                        "outline": "#887364",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .tonal-shadow {
+            box-shadow: 0 20px 40px rgba(18, 28, 40, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
+<main class="flex-grow flex items-center justify-center p-6 relative overflow-hidden">
+<!-- Background Architectural Elements -->
+<div class="absolute top-[-10%] left-[-5%] w-[40%] h-[60%] bg-surface-container-low rounded-full blur-[120px] opacity-50"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[30%] h-[50%] bg-surface-container-high rounded-full blur-[100px] opacity-40"></div>
+<div class="w-full max-w-[480px] z-10">
+<!-- Branding Header (Suppressed Navigation Shell as per task: Login) -->
+<div class="flex flex-col items-center mb-10">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary text-3xl" style="font-variation-settings: 'FILL' 1;">concierge</span>
+</div>
+<h1 class="font-headline font-extrabold text-3xl tracking-tighter text-on-surface">La CartAI</h1>
+<p class="font-body text-on-surface-variant mt-2">Bienvenido a la nueva era de tu gestión digital.</p>
+</div>
+<!-- Login Card -->
+<div class="glass-panel border border-outline-variant/15 rounded-[1.5rem] p-10 tonal-shadow">
+<form action="#" class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant ml-1" for="email">Correo Electrónico</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">mail</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-none rounded-xl focus:ring-2 focus:ring-primary-fixed-dim transition-all duration-200 placeholder:text-outline/50 font-body" id="email" name="email" placeholder="curator@estate.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center ml-1">
+<label class="font-label text-sm font-semibold text-on-surface-variant" for="password">Contraseña</label>
+<a class="text-primary font-label text-sm font-medium hover:underline transition-all" href="#">¿Olvidaste tu contraseña?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">lock</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-none rounded-xl focus:ring-2 focus:ring-primary-fixed-dim transition-all duration-200 placeholder:text-outline/50 font-body" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Options -->
+<div class="flex items-center space-x-3 ml-1">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary transition-all cursor-pointer" id="remember" type="checkbox"/>
+<label class="font-label text-sm text-on-surface-variant cursor-pointer select-none" for="remember">Recordarme por 30 días</label>
+</div>
+<!-- Action -->
+<button class="w-full bg-gradient-to-b from-primary to-primary-container text-on-primary font-headline font-bold py-4 rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] transition-all duration-200 flex items-center justify-center space-x-2" type="submit">
+<span>Iniciar Sesión</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</form>
+<!-- Alternate Sign-in -->
+<div class="mt-8 pt-8 border-t border-outline-variant/15">
+<p class="text-center font-label text-sm text-on-surface-variant mb-6">O continuar con</p>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center space-x-3 py-3 px-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors border border-transparent hover:border-outline-variant/20">
+<img alt="Google" class="w-5 h-5" data-alt="Official Google logo icon with its signature primary colors on a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5OHlLUH6kggrL5H8h-vSIvI_xSDxafFGcwIQBzTLa4EFF0e7hcRRyA5snO1ZdqD0sFfyLM93OR7uAKpT8zbGNLhxlH5uA1DCgyhmeuLSKVUEwsfXoHuGxCkFD9Xt9cT2B3GoATM8xGOHzJQLQO-sgGzIbMvaRT2TyAMemRwz7mQuKH_NVyhEK_1JLtCu7Lzku9O1DzSJUjCsVyjKHkEctKF7AFkMPnkpCEkt7t2Ave3rKmcRJZC9JkaKVJ1_BqLP_SuEV-n08l7bW"/>
+<span class="font-label text-sm font-medium">Google</span>
+</button>
+<button class="flex items-center justify-center space-x-3 py-3 px-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors border border-transparent hover:border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface text-xl" style="font-variation-settings: 'FILL' 1;">ios</span>
+<span class="font-label text-sm font-medium">Apple</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Meta -->
+<div class="mt-8 text-center space-y-4">
+<p class="font-label text-sm text-on-surface-variant">¿No tienes una cuenta? <a class="text-primary font-bold hover:underline" href="#">Solicitar Acceso</a></p>
+</div>
+</div>
+</main>
+<!-- Footer Content (As per JSON and Hierarchy) -->
+<footer class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-8 mt-auto border-t border-slate-200/15 dark:border-slate-800/15 bg-[#F8F9FF] dark:bg-slate-950">
+<div class="hidden">La CartAI</div>
+<div class="font-['Inter'] text-sm tracking-normal text-slate-500 dark:text-slate-400 mb-4 md:mb-0">
+            © 2024 The Concierge Ethos. All rights reserved.
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Inter'] text-sm tracking-normal text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-all" href="#">Política de Privacidad</a>
+<a class="font-['Inter'] text-sm tracking-normal text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-all" href="#">Términos de Servicio</a>
+<a class="font-['Inter'] text-sm tracking-normal text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-all" href="#">Ajustes de Cookies</a>
+<a class="font-['Inter'] text-sm tracking-normal text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-all" href="#">Soporte Global</a>
+</div>
+</footer>
+</body></html>
